@@ -85,7 +85,7 @@ if (isset($_GET['debug'])) {
 
 <div class="container">
     <div class="py-5 text-center">
-        <img class="d-block mx-auto mb-4" src="images/logo.jpg" alt="" width="72" height="172">
+        <img class="d-block mx-auto mb-4" src="images/logo.jpg" alt="" width="175">
         <h2>2288 support page</h2>
         <p class="lead">Below you can find support functionalities for 2288.</p>
     </div>
