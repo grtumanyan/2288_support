@@ -51,16 +51,37 @@ if (isset($_GET['debug'])) {
     </script>
 </head>
 <body>
-
 <div class="container">
-    <div class="mb-3">
-        <form action="/save.php" method="POST">
-            <div id="question_list" style="">
+    <div class="row">
+        <div class="col-8">
+            <form action="/save.php" method="POST">
+                <div id="question_list" style="">
 
-            </div>
-        </form>
+                </div>
+            </form>
+        </div>
+        <div class="col-4">
+            <form action="/saveNumber.php" method="POST">
+                <div>
+                    <label for="number">Number:</label>
+                    <input id="number" type="number" placeholder="Type number here" name="number" required>
+                </div>
+                <div>
+                    <input type="submit">
+                </div>
+            </form>
+        </div>
     </div>
 </div>
+
+<!--<div class="container">-->
+<!--    <div class="mb-3">-->
+<!--        -->
+<!--    </div>-->
+<!--</div>-->
 </body>
 
 </html>
+
+
+
