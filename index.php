@@ -45,7 +45,10 @@ if (isset($_GET['debug'])) {
                 console.log(res);
                 $("#question_list").append(res);
             });
-            $("#bottom").scrollIntoView();
+            $('html, body').animate({
+                scrollTop: offset.top,
+                scrollLeft: offset.left
+            }, 1000);
         });
 
 
@@ -159,7 +162,6 @@ if (isset($_GET['debug'])) {
         </ul>
     </footer>
 </div>
-<div id="bottom"></div>
 </body>
 
 </html>
