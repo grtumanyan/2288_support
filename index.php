@@ -85,16 +85,15 @@ if (isset($_GET['debug'])) {
 
 <div class="container">
     <div class="py-5 text-center">
-        <img class="d-block mx-auto mb-4" src="images/logo.jpg" alt="" width="72" height="72">
+        <img class="d-block mx-auto mb-4" src="images/logo.jpg" alt="" width="72" height="172">
         <h2>2288 support page</h2>
-        <p class="lead">Below is a test text.</p>
+        <p class="lead">Below you can find support functionalities for 2288.</p>
     </div>
 
     <div class="row">
         <div class="col-md-4 order-md-2 mb-4">
             <h4 class="d-flex justify-content-between align-items-center mb-3">
-                <span class="text-muted">Your space</span>
-                <span class="badge badge-secondary badge-pill">3</span>
+                <span class="text-muted">NEW space</span>
             </h4>
 <!--            <ul class="list-group mb-3">-->
 <!--                <li class="list-group-item d-flex justify-content-between lh-condensed">-->
@@ -141,7 +140,7 @@ if (isset($_GET['debug'])) {
             </form>
         </div>
         <div class="col-md-8 order-md-1">
-            <h4 class="mb-3">Test text</h4>
+            <h4 class="mb-3">Question list</h4>
             <form action="/save.php" method="POST">
                 <div id="question_list" style="">
 
