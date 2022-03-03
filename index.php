@@ -142,7 +142,7 @@ if (isset($_GET['debug'])) {
         <div class="col-md-8 order-md-1">
             <h4 class="mb-3">Question list</h4>
             <form action="/save.php" method="POST">
-                <div id="question_list" style="">
+                <div id="question_list" style="height: 200px; position:relative; overflow:hidden">
 
                 </div>
             </form>

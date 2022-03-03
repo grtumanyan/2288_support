@@ -50,8 +50,8 @@ function getByParentIdAnswerNumberLevel(?int $parentId = null, string $answer, i
 //    }
 
     if ($pdo) {
-        $query = "SELECT * FROM questions WHERE " . (is_null($parentId) ? 'parent_id is NULL ' : "parent_id='$parentId'") . "  
-                          AND number='$number' AND level='$level' 
+        $query = "SELECT * FROM questions WHERE " . (is_null($parentId) ? 'parent_id is NULL ' : "parent_id='$parentId'") . "
+                          AND number='$number' AND level='$level'
                           AND parent_answer='$answer'";
         debug(__LINE__, $query);
 
@@ -145,8 +145,8 @@ try {
             $options = json_decode($options);
 
             $text = <<<HTML
-            
-            <div>
+
+            <div style="position: absolute; bottom:0; left:0">
                 <label for="question_select" class="form-label" >{$res->question}</label>
                 <select
                     name="{$res->question}"
