@@ -146,7 +146,7 @@ try {
 
             $text = <<<HTML
 
-            <div style="position: absolute; bottom:0; left:0">
+            <div>
                 <label for="question_select" class="form-label" >{$res->question}</label>
                 <select
                     name="{$res->question}"
