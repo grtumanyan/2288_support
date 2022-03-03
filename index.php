@@ -45,10 +45,7 @@ if (isset($_GET['debug'])) {
                 console.log(res);
                 $("#question_list").append(res);
             });
-            $('html, body').animate({
-                scrollTop: offset.top,
-                scrollLeft: offset.left
-            }, 1000);
+            $(document).scrollTop($(document).height());
         });
 
 
