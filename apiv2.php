@@ -147,10 +147,10 @@ try {
             $text = <<<HTML
 
             <div>
-                <label for="question_select" class="form-label" >{$res->question}</label>
+                <label for="{$res->question}" class="form-label">{$res->question}</label>
                 <select
                     name="{$res->question}"
-                    class="form-select form-select-lg mb-3 question"
+                    class="form-select form-select-sm mb-3 question"
                     aria-label=".form-select-lg example"
                     data-question="{$res->id}">
                 <option ></option>
