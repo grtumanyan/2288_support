@@ -32,6 +32,15 @@ if (isset($_GET['debug'])) {
                 $("#question_list").append(res);
             });
 
+            $("#btnNumberArea").click(function () {
+                $("#numberArea").toggle();
+                $("#btnQuestionsArea").toggle();
+                $("#btnNumberArea").hide();
+            });
+
+            $("#btnQuestionsArea").click(function () {
+                $("#questionsArea").toggle();
+            });
         });
 
         $(document).on("change", "select.question", function () {
@@ -96,57 +105,36 @@ if (isset($_GET['debug'])) {
             <h4 class="d-flex justify-content-between align-items-center mb-3">
                 <span class="text-muted">NEW space</span>
             </h4>
-<!--            <ul class="list-group mb-3">-->
-<!--                <li class="list-group-item d-flex justify-content-between lh-condensed">-->
-<!--                    <div>-->
-<!--                        <h6 class="my-0">Product name</h6>-->
-<!--                        <small class="text-muted">Brief description</small>-->
-<!--                    </div>-->
-<!--                    <span class="text-muted">$12</span>-->
-<!--                </li>-->
-<!--                <li class="list-group-item d-flex justify-content-between lh-condensed">-->
-<!--                    <div>-->
-<!--                        <h6 class="my-0">Second product</h6>-->
-<!--                        <small class="text-muted">Brief description</small>-->
-<!--                    </div>-->
-<!--                    <span class="text-muted">$8</span>-->
-<!--                </li>-->
-<!--                <li class="list-group-item d-flex justify-content-between lh-condensed">-->
-<!--                    <div>-->
-<!--                        <h6 class="my-0">Third item</h6>-->
-<!--                        <small class="text-muted">Brief description</small>-->
-<!--                    </div>-->
-<!--                    <span class="text-muted">$5</span>-->
-<!--                </li>-->
-<!--                <li class="list-group-item d-flex justify-content-between bg-light">-->
-<!--                    <div class="text-success">-->
-<!--                        <h6 class="my-0">Promo code</h6>-->
-<!--                        <small>EXAMPLECODE</small>-->
-<!--                    </div>-->
-<!--                    <span class="text-success">-$5</span>-->
-<!--                </li>-->
-<!--                <li class="list-group-item d-flex justify-content-between">-->
-<!--                    <span>Total (USD)</span>-->
-<!--                    <strong>$20</strong>-->
-<!--                </li>-->
-<!--            </ul>-->
-
-            <form action="/saveNumber.php" method="POST" class="card p-2">
-                <div class="input-group">
-                    <input type="number" class="form-control" placeholder="Number">
-                    <div class="input-group-append">
-                        <button type="submit" class="btn btn-secondary">Submit</button>
-                    </div>
-                </div>
-            </form>
         </div>
         <div class="col-md-8 order-md-1">
-            <h4 class="mb-3">Question list</h4>
-            <form action="/save.php" method="POST">
-                <div id="question_list" style="">
+            <div>
+                <input type="button" id="btnNumberArea" class="btn btn-default" value="Starta nytt beslutsstöd">
+            </div>
 
-                </div>
-            </form>
+            <div id="numberArea" style="display:none">
+                <form action="/saveNumber.php" method="POST" class="card p-2">
+                    <div class="input-group">
+                        <input type="number" class="form-control" placeholder="Number">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-secondary">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div>
+                <input type="button" id="btnQuestionsArea" class="btn btn-default" value="click me" style="display:none">
+            </div>
+
+            <div id="questionsArea" style="display:none">
+                <h4 class="mb-3">Question list</h4>
+                <form action="/save.php" method="POST">
+                    <div id="question_list" style="">
+
+                    </div>
+                </form>
+            </div>
+
         </div>
     </div>
 
