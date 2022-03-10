@@ -40,6 +40,7 @@ if (isset($_GET['debug'])) {
 
             $("#btnQuestionsArea").click(function () {
                 $("#questionsArea").toggle();
+                $("#btnQuestionsArea").hide();
             });
         });
 
@@ -105,11 +106,15 @@ if (isset($_GET['debug'])) {
             <h4 class="d-flex justify-content-between align-items-center mb-3">
                 <span class="text-muted">NEW space</span>
             </h4>
+            <p class="lead">Contrary to popular belief, Lorem Ipsum is not simply random text.
+                It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
+                Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,
+                looked up one of the more obscure Latin words, consectetur, from a
+                Lorem Ipsum passage, and going through the cites of the word in classical literature,
+                "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
         </div>
         <div class="col-md-8 order-md-1">
-            <div>
-                <input type="button" id="btnNumberArea" class="btn btn-default" value="Starta nytt beslutsstöd">
-            </div>
+            <input type="button" id="btnNumberArea" class="btn btn-default btn-rounded mb-4" value="Starta nytt beslutsstöd">
 
             <div id="numberArea" style="display:none">
                 <form action="/saveNumber.php" method="POST" class="card p-2">
@@ -123,7 +128,7 @@ if (isset($_GET['debug'])) {
             </div>
 
             <div>
-                <input type="button" id="btnQuestionsArea" class="btn btn-default" value="click me" style="display:none">
+                <input type="button" id="btnQuestionsArea" class="btn btn-default btn-rounded mb-4" value="click me" style="display:none">
             </div>
 
             <div id="questionsArea" style="display:none">
