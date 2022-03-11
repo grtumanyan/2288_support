@@ -114,8 +114,7 @@ if (isset($_GET['debug'])) {
                 "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
         </div>
         <div class="col-md-8 order-md-1">
-            <input type="button" id="btnNumberArea" class="btn btn-default btn-rounded mb-4" value="Starta nytt beslutsstöd">
-
+            <button type="button" id="btnNumberArea" class="btn btn-primary btn-rounded mb-4">Starta nytt beslutsstöd</button>
             <div id="numberArea" style="display:none">
                 <form action="/saveNumber.php" method="POST" class="card p-2">
                     <div class="input-group">
