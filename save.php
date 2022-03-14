@@ -3,7 +3,7 @@
 $host = 'support_db';
 $db = 'support';
 $user = 'root';
-$password = 'root';
+$password = 'password';
 
 
 $dsn = "mysql:host=$host;dbname=$db;charset=UTF8";
