@@ -9,7 +9,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 }
 
 // DB values
-$host = 'support_db';
+$host = 'localhost';
 $db = 'support';
 $user = 'root';
 $password = 'password';
@@ -43,7 +43,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($pdo) {
                 $stmt = $pdo->query("SELECT id, username, password FROM users WHERE username = " . $username);
                 $user = $stmt->fetch();
-
+                var_dump($user);exit;
                 if ($user) {
                     if (password_verify($password, $hashed_password)) {
                         // Password is correct, so start a new session
