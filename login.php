@@ -9,10 +9,11 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 }
 
 // DB values
-$host = 'localhost';
+$host = '127.0.0.1';
 $db = 'support';
 $user = 'root';
-$password = '"password"';
+$port = '3306';
+$password = 'password';
 $dsn = "mysql:host=$host;dbname=$db;charset=UTF8";
 
 // Define variables and initialize with empty values
