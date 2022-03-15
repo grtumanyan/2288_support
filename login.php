@@ -35,7 +35,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $password = trim($_POST["password"]);
     }
-
+    var_dump($password);exit;
     // Validate credentials
     if (empty($username_err) && empty($password_err)) {
         try {
@@ -109,7 +109,7 @@ var_dump($user);exit;
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Login">
             </div>
-            <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
+            <p>Don't have an account? Contact administrator.</p>
         </form>
     </div>
 </body>
