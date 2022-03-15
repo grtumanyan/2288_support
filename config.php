@@ -1,15 +1,16 @@
 <?php
 /* Database credentials.*/
-define('DB_SERVER', 'support_db');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', 'password');
-define('DB_NAME', 'support');
+$host = 'support_db';
+$db = 'support';
+$user = 'root';
+$password = 'password';
 
-/* Attempt to connect to MySQL database */
-$link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+
+$dsn = "mysql:host=$host;dbname=$db;charset=UTF8";
+$pdo = new PDO($dsn, $user, $password);
 
 // Check connection
-if($link === false){
+if($pdo === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
 ?>
