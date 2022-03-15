@@ -12,7 +12,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 $host = 'localhost';
 $db = 'support';
 $user = 'root';
-$password = 'password';
+$password = '"password"';
 $dsn = "mysql:host=$host;dbname=$db;charset=UTF8";
 
 // Define variables and initialize with empty values
