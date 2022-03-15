@@ -35,7 +35,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $password = trim($_POST["password"]);
     }
-    var_dump($password);exit;
+
     // Validate credentials
     if (empty($username_err) && empty($password_err)) {
         try {
@@ -43,7 +43,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($pdo) {
                 $stmt = $pdo->query("SELECT id, username, password FROM users WHERE username = " . $username);
                 $user = $stmt->fetch();
-var_dump($user);exit;
+
                 if ($user) {
                     if (password_verify($password, $hashed_password)) {
                         // Password is correct, so start a new session
