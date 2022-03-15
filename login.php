@@ -9,11 +9,10 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 }
 
 // DB values
-$host = '127.0.0.1';
+$host = 'localhost';
 $db = 'support';
-$user = 'root';
-$port = '3306';
-$password = 'password';
+$dbuser = 'root';
+$dbpassword = 'password';
 $dsn = "mysql:host=$host;dbname=$db;charset=UTF8";
 
 // Define variables and initialize with empty values
@@ -40,7 +39,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate credentials
     if (empty($username_err) && empty($password_err)) {
         try {
-            $pdo = new PDO($dsn, $user, $password);
+            $pdo = new PDO($dsn, $dbuser, $dbpassword);
             if ($pdo) {
                 $stmt = $pdo->query("SELECT id, username, password FROM users WHERE username = " . $username);
                 $user = $stmt->fetch();
