@@ -9,7 +9,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 }
 
 // DB values
-$host = 'localhost';
+$host = 'mysql';
 $db = 'support';
 $user = 'root';
 $password = 'password';
