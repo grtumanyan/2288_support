@@ -1,4 +1,8 @@
 <?php
+$hashed_password = password_hash('admin', PASSWORD_DEFAULT);
+var_dump($hashed_password);
+exit;
+
 // Initialize the session
 session_start();
 
@@ -44,19 +48,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 $stmt = $pdo->prepare("SELECT id, username, password FROM users WHERE username=:username");
                 $stmt->execute(['username' => $username]);
                 $user = $stmt->fetch();
-                var_dump($user);exit;
+
                 if ($user) {
-                    if (password_verify($password, $hashed_password)) {
+                    if (password_verify($password, $user['password'])) {
                         // Password is correct, so start a new session
                         session_start();
 
                         // Store data in session variables
                         $_SESSION["loggedin"] = true;
-                        $_SESSION["id"] = $id;
+                        $_SESSION["id"] = $user['id'];
                         $_SESSION["username"] = $username;
 
                         // Redirect user to welcome page
-                        header("location: welcome.php");
+                        header("location: index.php");
                     } else {
                         // Password is not valid, display a generic error message
                         $login_err = "Invalid username or password.";
