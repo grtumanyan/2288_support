@@ -1,7 +1,7 @@
 <?php
-$hashed_password = password_hash('admin', PASSWORD_DEFAULT);
-var_dump($hashed_password);
-exit;
+//$hashed_password = password_hash('TYPE_PASS_HERE', PASSWORD_DEFAULT);
+//var_dump($hashed_password);
+//exit;
 
 // Initialize the session
 session_start();
