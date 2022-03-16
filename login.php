@@ -41,6 +41,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         try {
             $pdo = new PDO($dsn, $dbuser, $dbpassword);
             if ($pdo) {
+                var_dump($pdo);exit;
                 $stmt = $pdo->query("SELECT id, username, password FROM users WHERE username = " . $username);
                 $user = $stmt->fetch();
                 var_dump($user);exit;
