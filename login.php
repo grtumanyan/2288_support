@@ -35,7 +35,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $password = trim($_POST["password"]);
     }
-    var_dump($username_err, $password_err);exit;
+
     // Validate credentials
     if (empty($username_err) && empty($password_err)) {
         try {
