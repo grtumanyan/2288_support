@@ -26,6 +26,7 @@ function findProjectIssues() {
     $client = login();
     return $client->findProjectIssues(array('queryObject' => array(
         'actualTime' => 0,
+        'attachmentCount' => 0,
         'billingAmount' => 0,
         'buildNumber' => 0,
         'componentId' => 0,
