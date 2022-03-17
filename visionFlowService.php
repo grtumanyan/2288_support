@@ -46,6 +46,7 @@ function findProjectIssues() {
         'issueNotIncludedInRecurringSeriesHasBeenSet' => 0,
         'issuePriorityId' => 0,
         'issueCreatedBySystemUserId' => 0,
+        'issueEscalationLevelId' => 0,
         'issueRank' => 0,
         'issueResolutionId' => 0,
         'issueSeverityId' => 0,
