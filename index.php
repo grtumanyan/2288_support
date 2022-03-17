@@ -1,8 +1,11 @@
 <?php
+//Show all type errors
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 // Include visionflow service file
 require_once "visionFlowService.php";
-
 
 try {
     $result = findProjectIssues();
@@ -29,8 +32,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 }
 
 
-?><html>
+?>
 
+<html>
 <head>
     <title></title>
     <link rel="stylesheet"
