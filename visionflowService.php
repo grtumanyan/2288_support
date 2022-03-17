@@ -1,6 +1,6 @@
 <?php
 // Include config file
-require_once "visionFlowConfig.php";
+require_once $_SERVER['DOCUMENT_ROOT']."/visionFlowConfig.php";
 
 function login() {
     //Log in:
