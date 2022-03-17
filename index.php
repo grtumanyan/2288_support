@@ -71,8 +71,17 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 </head>
 <body>
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+    <h5 class="my-0 mr-md-auto font-weight-normal">Company name</h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" href="#">Features</a>
+        <a class="p-2 text-dark" href="#">Enterprise</a>
+        <a class="p-2 text-dark" href="#">Support</a>
+        <a class="p-2 text-dark" href="#">Pricing</a>
+    </nav>
+    <a class="btn btn-outline-primary" href="#">Sign up</a>
+</div>
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
     <h5 class="my-0 mr-md-auto font-weight-normal"><?= $_SESSION["username"]; ?></h5>
-    <hr>
     <a class="btn btn-outline-primary" href="logout.php">Sign out</a>
 </div>
 <div class="container">
@@ -94,7 +103,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                 Lorem Ipsum passage, and going through the cites of the word in classical literature,
                 "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
         </div>
-        <div class="col-md-8 order-md-1 justify-content-center">
+        <div class="col-md-8 order-md-1 align-items-center">
             <button type="button" id="btnNumberArea" class="btn btn-primary btn-rounded mb-4">Starta nytt beslutsstöd</button>
             <div id="numberArea" style="display:none">
                 <form action="/saveNumber.php" method="POST" class="card p-2">
