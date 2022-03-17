@@ -90,7 +90,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     </style>
 </head>
 <body>
-    <div class="h-100 row align-items-center">
+    <div class="h-100 row justify-content-center">
         <div class="wrapper">
             <h2>Login</h2>
             <p>Please fill in your credentials to login.</p>
