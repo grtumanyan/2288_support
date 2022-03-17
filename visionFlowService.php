@@ -76,6 +76,7 @@ function findProjectIssues() {
         'responsibleSystemUserId' => 0,
         'SLAPlanId' => 0,
         'SLAPlanManually' => 0,
+        'SLAPlanManuallyHasBeenSet' => 0,
         'storyPoints' => 0,
         'subIssueOrder' => 0,
         'subIssuesDoneInOrder' => 0,
