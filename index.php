@@ -1,5 +1,12 @@
 <?php
 
+// Include visionflow service file
+require_once "visionFlowService.php";
+
+
+$result = findProjectIssues();
+var_dump($result);exit;
+
 //if (isset($_GET['debug'])) {
 //    session_start();
 //    $_SESSION['debug'] = 1;

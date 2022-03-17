@@ -2,26 +2,28 @@
 // Include config file
 require_once "visionFlowConfig.php";
 
-//Log in:
-try {
-    $client = new SoapClient('http://www.visionflow.com/api/docs/service.wsdl', array('trace' => true, 'exceptions' => false));
-} catch (SoapFault $e) {
-    var_dump($e->getMessage());
-    exit;
+function login() {
+    //Log in:
+    try {
+        $client = new SoapClient('http://www.visionflow.com/api/docs/service.wsdl', array('trace' => true, 'exceptions' => false));
+    } catch (SoapFault $e) {
+        var_dump($e->getMessage());
+        exit;
+    }
+    $client->__setLocation('https://www.visionflow.com/service/VisionProject-v2/VisionProjectWebServiceService');
+
+    $systemUser = $client->loginWithAPIKey2(array(
+        'username' => $username,
+        'password' => $password,
+        'webserviceAPIKey' => $webserviceAPIKey
+    ));
+
+    return $client;
 }
-$client->__setLocation('https://www.visionflow.com/service/VisionProject-v2/VisionProjectWebServiceService');
 
-$systemUser = $client->loginWithAPIKey2(array(
-    'username' => $username,
-    'password' => $password,
-    'webserviceAPIKey' => $webserviceAPIKey
-));
+function findProjectIssues() {
 
-$result = findProjectIssues($client);
-var_dump($result);exit;
-
-function findProjectIssues($client) {
-
+    $client = login();
     return $client->findProjectIssues(array('queryObject' => array(
         'actualTime' => 0,
         'billingAmount' => 0,
