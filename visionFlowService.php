@@ -75,6 +75,7 @@ function findProjectIssues() {
         'remainingTime' => 0,
         'responsibleSystemUserId' => 0,
         'SLAPlanId' => 0,
+        'SLAPlanManually' => 0,
         'storyPoints' => 0,
         'subIssueOrder' => 0,
         'subIssuesDoneInOrder' => 0,
