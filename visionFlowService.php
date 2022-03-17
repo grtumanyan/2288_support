@@ -84,6 +84,7 @@ function findProjectIssues() {
         'secondProjectId' => 0,
         'sourceDirection' => 0,
         'ticketId' => 0,
+        'totalExpense' => 0,
         'votes' => 0,
     )));
 }
