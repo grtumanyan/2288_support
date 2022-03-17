@@ -47,6 +47,7 @@ function findProjectIssues() {
         'issuePriorityId' => 0,
         'issueCreatedBySystemUserId' => 0,
         'issueEscalationLevelId' => 0,
+        'issueUrgencyId' => 0,
         'issueRank' => 0,
         'issueResolutionId' => 0,
         'issueSeverityId' => 0,
