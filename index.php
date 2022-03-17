@@ -90,7 +90,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
     <div class="row">
         <div class="col-md-4 order-md-2 mb-4">
-            <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <h4 class="d-flex justify-content-between text-center mb-3">
                 <span class="text-muted">NEW space</span>
             </h4>
             <p class="lead">Contrary to popular belief, Lorem Ipsum is not simply random text.
@@ -100,7 +100,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                 Lorem Ipsum passage, and going through the cites of the word in classical literature,
                 "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
         </div>
-        <div class="col-md-8 order-md-1 align-items-center">
+        <div class="col-md-8 order-md-1 text-center">
             <button type="button" id="btnNumberArea" class="btn btn-primary btn-rounded mb-4">Starta nytt beslutsstöd</button>
             <div id="numberArea" style="display:none">
                 <form action="/saveNumber.php" method="POST" class="card p-2">
