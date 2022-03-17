@@ -3,8 +3,10 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
+var_dump($_SERVER['DOCUMENT_ROOT']);exit;
 // Include visionflow service file
+require_once $_SERVER['DOCUMENT_ROOT'].'/2288_/configs/config_templates.inc.php';
+
 require_once "visionFlowService.php";
 
 try {
