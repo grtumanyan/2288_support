@@ -4,7 +4,12 @@
 require_once "visionFlowService.php";
 
 
-$result = findProjectIssues();
+try {
+    $result = findProjectIssues();
+} catch (Exception $e) {
+    var_dump($e->getMessage());
+    exit;
+}
 var_dump($result);exit;
 
 //if (isset($_GET['debug'])) {
