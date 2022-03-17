@@ -57,6 +57,7 @@ function findProjectIssues() {
         'lastRepliedById' => 0,
         'latestReplyIsBySupportUser' => 0,
         'latestReplyIsBySupportUserHasBeenSet' => 0,
+        'locationId' => 0,
         'mailSettingId' => 0,
         'numberOfComments' => 0,
         'numberOfSubIssues' => 0,
