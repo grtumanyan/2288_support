@@ -71,11 +71,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 </head>
 <body>
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">2288</a>
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#"><?= $_SESSION["username"]; ?></a>
     <ul class="navbar-nav px-3">
-        <li class="nav-item text-nowrap">
-            <h5 class="my-0 mr-md-auto font-weight-normal text-white"><?= $_SESSION["username"]; ?></h5>
-        </li>
         <li class="nav-item text-nowrap">
             <a class="nav-link" href="logout.php">Sign out</a>
         </li>
