@@ -82,6 +82,7 @@ function findProjectIssues() {
         'subIssuesDoneInOrder' => 0,
         'subIssuesDoneInOrderHasBeenSet' => 0,
         'secondProjectId' => 0,
+        'sourceDirection' => 0,
         'ticketId' => 0,
         'votes' => 0,
     )));
