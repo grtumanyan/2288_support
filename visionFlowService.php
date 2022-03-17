@@ -30,6 +30,7 @@ function findProjectIssues() {
         'billingAmount' => 0,
         'buildNumber' => 0,
         'componentId' => 0,
+        'contractId' => 0,
         'containsRecipients' => 0,
         'containsRecipientsHasBeenSet' => 0,
         'costAmount' => 0,
