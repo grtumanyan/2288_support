@@ -32,6 +32,33 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 }
 
 
+// Processing form data when form is submitted
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    // Check if username is empty
+    if (empty(trim($_POST["ticket"]))) {
+        $ticket_err = "Please enter username.";
+    } else {
+        $ticket = trim($_POST["ticket"]);
+        $ticket = 'ID-' . $ticket;
+    }
+
+    // Validate credentials
+    if (empty($ticket_err)) {
+        try {
+            // Ticket number is correct, so start a new session
+            session_start();
+
+            // Store data in session variables
+            $_SESSION["ticket"] = $ticket;
+        } catch (Exception $ex) {
+            //Log Exception
+            var_dump($ex->getMessage());
+        }
+    }
+}
+
+
 ?>
 
 <html>
@@ -102,23 +129,23 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     </div>
 
     <div class="row">
-        <div class="col-md-4 order-md-2 mb-4">
-            <h4 class="d-flex justify-content-between text-center mb-3">
-                <span class="text-muted">NEW space</span>
-            </h4>
-            <p class="lead">Contrary to popular belief, Lorem Ipsum is not simply random text.
-                It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
-                Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,
-                looked up one of the more obscure Latin words, consectetur, from a
-                Lorem Ipsum passage, and going through the cites of the word in classical literature,
-                "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
-        </div>
-        <div class="col-md-8 order-md-1 text-center">
+<!--        <div class="col-md-4 order-md-2 mb-4">-->
+<!--            <h4 class="d-flex justify-content-between text-center mb-3">-->
+<!--                <span class="text-muted">NEW space</span>-->
+<!--            </h4>-->
+<!--            <p class="lead">Contrary to popular belief, Lorem Ipsum is not simply random text.-->
+<!--                It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.-->
+<!--                Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,-->
+<!--                looked up one of the more obscure Latin words, consectetur, from a-->
+<!--                Lorem Ipsum passage, and going through the cites of the word in classical literature,-->
+<!--                "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>-->
+<!--        </div>-->
+        <div class="col-md-12 order-md-1 text-center">
             <button type="button" id="btnNumberArea" class="btn btn-primary btn-rounded mb-4">Starta nytt beslutsstöd</button>
             <div id="numberArea" style="display:none">
-                <form action="/saveNumber.php" method="POST" class="card p-2">
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="card p-2">
                     <div class="input-group">
-                        <input type="number" class="form-control" placeholder="Number">
+                        <input type="number" class="form-control" placeholder="Number" name="ticket">
                         <div class="input-group-append">
                             <button type="submit" class="btn btn-secondary">Submit</button>
                         </div>
