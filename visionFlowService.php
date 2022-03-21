@@ -18,9 +18,6 @@ function login() {
         'webserviceAPIKey' => $key
     ));
 
-    var_dump(1);
-    var_dump($systemUser);exit;
-
     return $client;
 }
 
