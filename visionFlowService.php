@@ -1,7 +1,7 @@
 <?php
 // Include config file
 require_once $_SERVER['DOCUMENT_ROOT'] . "/visionFlowConfig.php";
-
+var_dump($_SERVER['DOCUMENT_ROOT']);exit;
 function login() {
     //Log in:
     try {
