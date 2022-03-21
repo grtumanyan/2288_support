@@ -46,9 +46,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate credentials
     if (empty($ticket_err)) {
         try {
-            // Ticket number is correct, so start a new session
-            session_start();
-
             // Store data in session variables
             $_SESSION["ticket"] = $ticket;
         } catch (Exception $ex) {
@@ -141,6 +138,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <!--                "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>-->
 <!--        </div>-->
         <div class="col-md-12 order-md-1 text-center">
+            <?php if ($_SESSION["ticket"]) { ?>
             <button type="button" id="btnNumberArea" class="btn btn-primary btn-rounded mb-4">Starta nytt beslutsstöd</button>
             <div id="numberArea" style="display:none">
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="card p-2">
@@ -153,6 +151,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 </form>
             </div>
 
+            <?php } else { ?>
             <div>
                 <button type="button" id="btnQuestionsArea" class="btn btn-primary btn-rounded mb-4" style="display:none">Continue</button>
             </div>
@@ -165,6 +164,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                 </form>
             </div>
+            <?php } ?>
 
         </div>
     </div>
