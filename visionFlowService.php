@@ -24,6 +24,7 @@ function login() {
 function findProjectIssues() {
 
     $client = login();
+    var_dump($client);exit;
     return $client->findProjectIssues(array('queryObject' => array(
         'actualTime' => 0,
         'attachmentCount' => 0,
