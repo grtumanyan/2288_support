@@ -37,7 +37,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Check if username is empty
     if (empty(trim($_POST["ticket"]))) {
-        $ticket_err = "Please enter username.";
+        $ticket_err = "Please enter ticket number.";
     } else {
         $ticket = trim($_POST["ticket"]);
         $ticket = 'ID-' . $ticket;
@@ -48,6 +48,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         try {
             // Store data in session variables
             $_SESSION["ticket"] = $ticket;
+        } catch (Exception $ex) {
+            //Log Exception
+            var_dump($ex->getMessage());
+        }
+    }
+
+    // Check if username is empty
+    if (!empty(trim($_POST["rebootTicket"]))) {
+        try {
+            unset($_SESSION['ticket']);
         } catch (Exception $ex) {
             //Log Exception
             var_dump($ex->getMessage());
@@ -134,7 +144,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="input-group">
                         <input type="number" class="form-control" placeholder="Number" name="ticket">
                         <div class="input-group-append">
-                            <button type="submit" class="btn btn-secondary">Submit</button>
+                            <button type="submit" class="btn btn-secondary">Spara</button>
                         </div>
                     </div>
                 </form>
@@ -142,7 +152,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <?php } else { ?>
             <div>
-                <button type="button" id="btnQuestionsArea" class="btn btn-primary btn-rounded mb-4">Continue</button>
+                <button type="button" id="btnQuestionsArea" class="btn btn-primary btn-rounded mb-4">Want to delete old ticket number and input new one? Click here.</button>
+            </div>
+            <div id="numberArea">
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="card p-2">
+                    <div class="input-group">
+                        <input type="hidden" class="form-control" name="rebootTicket">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-secondary">Want to delete old ticket number and input new one? Click here.</button>
+                        </div>
+                    </div>
+                </form>
             </div>
 
             <div id="questionsArea">
