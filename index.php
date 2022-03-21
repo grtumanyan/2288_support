@@ -7,21 +7,21 @@ error_reporting(E_ALL);
 require_once $_SERVER['DOCUMENT_ROOT'] . "/visionFlowService.php";
 
 //TODO: Return to this integration when we will have correct creds
-//try {
-//    $result = findProjectIssues();
-//} catch (Exception $e) {
-//    var_dump($e->getMessage());
-//    exit;
-//}
-//var_dump($result);exit;
+try {
+    $result = findProjectIssues();
+} catch (Exception $e) {
+    var_dump($e->getMessage());
+    exit;
+}
+var_dump($result);exit;
 
-//if (isset($_GET['debug'])) {
-//    session_start();
-//    $_SESSION['debug'] = 1;
-//} else {
-//    $_SESSION['debug']=0;
-//    session_abort();
-//}
+if (isset($_GET['debug'])) {
+    session_start();
+    $_SESSION['debug'] = 1;
+} else {
+    $_SESSION['debug']=0;
+    session_abort();
+}
 
 session_start();
 
