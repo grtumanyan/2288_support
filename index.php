@@ -138,7 +138,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <!--                "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>-->
 <!--        </div>-->
         <div class="col-md-12 order-md-1 text-center">
-            <?php if ($_SESSION["ticket"]) { ?>
+            <?php if (!isset($_SESSION["ticket"])) { ?>
             <button type="button" id="btnNumberArea" class="btn btn-primary btn-rounded mb-4">Starta nytt beslutsstöd</button>
             <div id="numberArea" style="display:none">
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="card p-2">
