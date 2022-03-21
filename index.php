@@ -79,17 +79,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 console.log(res);
                 $("#question_list").append(res);
             });
-
-            $("#btnNumberArea").click(function () {
-                $("#numberArea").toggle();
-                $("#btnQuestionsArea").toggle();
-                $("#btnNumberArea").hide();
-            });
-
-            $("#btnQuestionsArea").click(function () {
-                $("#questionsArea").toggle();
-                $("#btnQuestionsArea").hide();
-            });
         });
 
         $(document).on("change", "select.question", function () {
@@ -153,10 +142,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <?php } else { ?>
             <div>
-                <button type="button" id="btnQuestionsArea" class="btn btn-primary btn-rounded mb-4" style="display:none">Continue</button>
+                <button type="button" id="btnQuestionsArea" class="btn btn-primary btn-rounded mb-4">Continue</button>
             </div>
 
-            <div id="questionsArea" style="display:none">
+            <div id="questionsArea">
                 <h4 class="mb-3">Question list</h4>
                 <form action="/save.php" method="POST">
                     <div id="question_list" style="">
