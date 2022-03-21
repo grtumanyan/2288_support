@@ -15,7 +15,7 @@ function login() {
     $systemUser = $client->loginWithAPIKey2(array(
         'username' => $username,
         'password' => $password,
-        'webserviceAPIKey' => $webserviceAPIKey
+        'webserviceAPIKey' => $key
     ));
 
     return $client;
