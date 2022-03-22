@@ -145,8 +145,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="col-md-12 order-md-1 text-center">
             <?php if (!isset($_SESSION["ticket"])) { ?>
             <button type="button" id="btnNumberArea" class="btn btn-primary btn-rounded mb-4">Starta nytt beslutsstöd</button>
-            <div id="numberArea" class="mb-4" style="display:none">
-                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="card p-2">
+            <div id="numberArea" style="display:none">
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="mb-4">
                     <div class="input-group">
                         <input type="number" class="form-control" placeholder="Number" name="ticket">
                         <div class="input-group-append">
@@ -157,7 +157,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
 
             <?php } else { ?>
-            <div class="mb-4">
+            <div>
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="card p-2">
                     <input type="hidden" class="form-control" name="rebootTicket">
                     <div class="input-group-append">
@@ -166,7 +166,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 </form>
             </div>
 
-            <div class="mb-4">
+            <div>
                 <h4 class="mb-3">Question list</h4>
                 <form action="/save.php" method="POST">
                     <div id="question_list" style="">
