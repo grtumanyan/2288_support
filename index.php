@@ -158,7 +158,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <?php } else { var_dump($_SESSION["ticket"]);?>
             <div>
-                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="card p-2">
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="mb-4">
                     <input type="hidden" class="form-control" name="rebootTicket">
                     <div class="input-group-append">
                         <button type="submit" class="btn btn-secondary">Want to delete old ticket number and input new one? Click here.</button>
@@ -167,8 +167,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
 
             <div>
-                <h4 class="mb-3">Question list</h4>
-                <form action="/save.php" method="POST">
+                <h4 class="mb-4">Question list</h4>
+                <form action="/save.php" method="POST" class="mb-4">
                     <div id="question_list" style="">
 
                     </div>
