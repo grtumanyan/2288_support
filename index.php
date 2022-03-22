@@ -163,6 +163,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="input-group-append">
                         <button type="submit" class="btn btn-secondary">Want to delete old ticket number and input new one? Click here.</button>
                     </div>
+                    <p class="lead col-sm-3 col-md-2 mr-0">Ticket Number: <?= $_SESSION["ticket"]; ?></p>
                 </form>
             </div>
 
