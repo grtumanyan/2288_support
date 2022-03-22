@@ -89,6 +89,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 console.log(res);
                 $("#question_list").append(res);
             });
+
+            $("#btnNumberArea").click(function () {
+                $("#numberArea").toggle();
+                $("#btnNumberArea").hide();
+            });
         });
 
         $(document).on("change", "select.question", function () {
@@ -103,11 +108,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 $("#question_list").append(res);
             });
             $(document).scrollTop($(document).height());
-        });
-
-        $("#btnNumberArea").click(function () {
-            $("#numberArea").toggle();
-            $("#btnNumberArea").hide();
         });
 
 
