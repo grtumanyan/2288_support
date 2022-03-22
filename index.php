@@ -57,6 +57,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check if reboot ticket request is empty
     if (isset($_SESSION['rebootTicket'])) {
         try {
+            var_dump('HERE');
             session_unset();
         } catch (Exception $ex) {
             //Log Exception
