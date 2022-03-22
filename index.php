@@ -164,8 +164,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                 </form>
 
-                <p class="lead col-sm-3 col-md-2 mr-0">Ticket Number: <?= $_SESSION["ticket"]; ?></p>
-                <hr>
+                <p class="lead col-sm-3 col-md-2 mr-0" style="text-align: center">Ticket Number: <?= $_SESSION["ticket"]; ?></p>
                 <hr>
                 <h4 class="mb-4">Question list</h4>
                 <form action="/save.php" method="POST" class="mb-4">
