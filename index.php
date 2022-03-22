@@ -105,6 +105,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $(document).scrollTop($(document).height());
         });
 
+        $("#btnNumberArea").click(function () {
+            $("#numberArea").toggle();
+            $("#btnNumberArea").hide();
+        });
+
+
 
     </script>
 </head>
