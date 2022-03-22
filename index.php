@@ -6,11 +6,6 @@ error_reporting(E_ALL);
 
 require_once $_SERVER['DOCUMENT_ROOT'] . "/visionFlowService.php";
 
-function getIfSet(&$value, $default = null)
-{
-    return isset($value) ? $value : $default;
-}
-
 //TODO: Return to this integration when we will have correct creds
 //try {
 //    $result = findProjectIssues();
@@ -41,7 +36,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Check if ticket number is empty
-    if (getIfSet($_POST["ticket"])) {
+    if (isset($_POST["ticket"])) {
         if (empty(trim($_POST["ticket"]))) {
             $ticket_err = "Please enter ticket number.";
         }
@@ -60,10 +55,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             var_dump($ex->getMessage());
         }
     }
-    var_dump(getIfSet($_POST["rebootTicket"]));
-    exit;
+
     // Check if reboot ticket request is empty
-    if (getIfSet($_POST["rebootTicket"])) {
+    if (isset($_POST["rebootTicket"])) {
         var_dump('1');
         try {
             unset ($_SESSION["ticket"]);
