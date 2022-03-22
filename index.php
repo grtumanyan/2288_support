@@ -157,7 +157,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
 
             <?php } else { ?>
-            <div>
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="mb-4">
                     <input type="hidden" class="form-control" name="rebootTicket">
                     <div class="input-group-append">
@@ -165,16 +164,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                     <p class="lead col-sm-3 col-md-2 mr-0">Ticket Number: <?= $_SESSION["ticket"]; ?></p>
                 </form>
-            </div>
 
-            <div>
                 <h4 class="mb-4">Question list</h4>
                 <form action="/save.php" method="POST" class="mb-4">
                     <div id="question_list" style="">
 
                     </div>
                 </form>
-            </div>
             <?php } ?>
 
         </div>
