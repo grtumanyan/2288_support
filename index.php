@@ -35,8 +35,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // Check if username is empty
-    if (empty(trim($_POST["ticket"]))) {
+    // Check if ticket number is empty
+    if (isset($_SESSION['ticket'])) {
         $ticket_err = "Please enter ticket number.";
     } else {
         $ticket = trim($_POST["ticket"]);
@@ -55,9 +55,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Check if reboot ticket request is empty
-    if (!empty(trim($_POST["rebootTicket"]))) {
+    if (isset($_SESSION['rebootTicket'])) {
         try {
-            unset($_SESSION['ticket']);
+            session_unset();
         } catch (Exception $ex) {
             //Log Exception
             var_dump($ex->getMessage());
@@ -156,7 +156,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 </form>
             </div>
 
-            <?php } else { var_dump($_SESSION["ticket"]);?>
+            <?php } else { ?>
             <div>
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="card p-2">
                     <input type="hidden" class="form-control" name="rebootTicket">
