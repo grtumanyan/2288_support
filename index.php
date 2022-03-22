@@ -60,8 +60,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             var_dump($ex->getMessage());
         }
     }
-    var_dump($_POST);
-    var_dump($_POST["rebootTicket"]);
+    var_dump(getIfSet($_POST["rebootTicket"]));
     exit;
     // Check if reboot ticket request is empty
     if (getIfSet($_POST["rebootTicket"])) {
