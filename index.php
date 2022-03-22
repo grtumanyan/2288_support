@@ -163,8 +163,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                         <button type="submit" class="btn btn-secondary">Want to delete old ticket number and input new one? Click here.</button>
                     </div>
                 </form>
-                <hr>
-                <h4 class="mb-4">Ticket Number: <?= $_SESSION["ticket"]; ?></h4>
+                <h4 class="mb-4 lead">Ticket Number: <?= $_SESSION["ticket"]; ?></h4>
                 <hr>
                 <form action="/save.php" method="POST" class="mb-4">
                     <div id="question_list" style="">
