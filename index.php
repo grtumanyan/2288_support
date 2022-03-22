@@ -156,7 +156,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 </form>
             </div>
 
-            <?php } else { ?>
+            <?php } else { var_dump($_SESSION["ticket"]);?>
             <div>
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="card p-2">
                     <input type="hidden" class="form-control" name="rebootTicket">
