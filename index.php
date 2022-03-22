@@ -35,33 +35,29 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // Check if ticket number is empty
+    // CODE PART FOR TICKET
     if (isset($_POST["ticket"])) {
         if (empty(trim($_POST["ticket"]))) {
             $ticket_err = "Please enter ticket number.";
         }
-    } else {
         $ticket = trim($_POST["ticket"]);
         $ticket = 'ID-' . $ticket;
-    }
 
-    // Validate credentials
-    if (empty($ticket_err)) {
-        try {
-            // Store data in session variables
-            $_SESSION["ticket"] = $ticket;
-        } catch (Exception $ex) {
-            //Log Exception
-            var_dump($ex->getMessage());
+        if (empty($ticket_err)) {
+            try {
+                // Store data in session variables
+                $_SESSION["ticket"] = $ticket;
+            } catch (Exception $ex) {
+                //Log Exception
+                var_dump($ex->getMessage());
+            }
         }
     }
 
-    // Check if reboot ticket request is empty
+    // CODE PART FOR TICKET REBOOT
     if (isset($_POST["rebootTicket"])) {
-        var_dump('1');
         try {
             unset ($_SESSION["ticket"]);
-            var_dump('2');
             session_unset();
         } catch (Exception $ex) {
             //Log Exception
