@@ -131,18 +131,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 
     <div class="row">
-<!--        <div class="col-md-4 order-md-2 mb-4">-->
-<!--            <h4 class="d-flex justify-content-between text-center mb-3">-->
-<!--                <span class="text-muted">NEW space</span>-->
-<!--            </h4>-->
-<!--            <p class="lead">Contrary to popular belief, Lorem Ipsum is not simply random text.-->
-<!--                It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.-->
-<!--                Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,-->
-<!--                looked up one of the more obscure Latin words, consectetur, from a-->
-<!--                Lorem Ipsum passage, and going through the cites of the word in classical literature,-->
-<!--                "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>-->
-<!--        </div>-->
-        <div class="col-md-12 order-md-1 text-center">
+        <div class="col-md-4 order-md-2 mb-4">
+            <h4 class="d-flex justify-content-between text-center mb-3">
+                <span class="text-muted">Standard questions</span>
+            </h4>
+            <p class="lead">Contrary to popular belief, Lorem Ipsum is not simply random text.
+                It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
+                Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,
+                looked up one of the more obscure Latin words, consectetur, from a
+                Lorem Ipsum passage, and going through the cites of the word in classical literature,
+                "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+        </div>
+        <div class="col-md-8 order-md-1 text-center">
             <?php if (!isset($_SESSION["ticket"])) { ?>
             <button type="button" id="btnNumberArea" class="btn btn-primary btn-rounded mb-4">Starta nytt beslutsstöd</button>
             <div id="numberArea" style="display:none">
