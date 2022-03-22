@@ -145,7 +145,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="col-md-12 order-md-1 text-center">
             <?php if (!isset($_SESSION["ticket"])) { ?>
             <button type="button" id="btnNumberArea" class="btn btn-primary btn-rounded mb-4">Starta nytt beslutsstöd</button>
-            <div id="numberArea" style="display:none">
+            <div id="numberArea" class="mb-4" style="display:none">
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="card p-2">
                     <div class="input-group">
                         <input type="number" class="form-control" placeholder="Number" name="ticket">
