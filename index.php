@@ -58,7 +58,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST["rebootTicket"])) {
         try {
             unset ($_SESSION["ticket"]);
-            session_unset();
         } catch (Exception $ex) {
             //Log Exception
             var_dump($ex->getMessage());
