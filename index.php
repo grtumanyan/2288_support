@@ -7,13 +7,13 @@ error_reporting(E_ALL);
 require_once $_SERVER['DOCUMENT_ROOT'] . "/visionFlowService.php";
 
 //TODO: Return to this integration when we will have correct creds
-//try {
-//    $result = findProjectIssues();
-//} catch (Exception $e) {
-//    var_dump($e->getMessage());
-//    exit;
-//}
-//var_dump($result);exit;
+try {
+    $result = findProjectIssues();
+} catch (Exception $e) {
+    var_dump($e->getMessage());
+    exit;
+}
+var_dump($result);exit;
 
 if (isset($_GET['debug'])) {
     session_start();
@@ -178,12 +178,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
         </div>
     </div>
-
-    <footer class="footer mt-auto py-3 bg-light">
-        <div class="container">
-            <span class="text-muted">© 2288</span>
-        </div>
-    </footer>
 </div>
 </body>
 
