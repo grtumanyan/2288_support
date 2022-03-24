@@ -107,6 +107,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 console.log(res);
                 $("#question_list").append(res);
             });
+            alert('asas');
             $(document).scrollTop($(document).height());
         });
 
@@ -133,7 +134,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="row">
         <div class="col-md-3 order-md-3 mb-4">
             <h4 class="d-flex justify-content-between text-center mb-3">
-                <span class="text-muted">Answer from points</span>
+                <span class="text-muted">Beslutsstödets svar</span>
             </h4>
             <p class="lead">Går bra att avvakta hemma, Rådgivning från 2288</p>
         </div>
