@@ -24,7 +24,7 @@ function checkUser($client)
     return $client->checkUser(
         ['username' => 'beslutsstod.koppling@2288.se',
         'password' => 'HncUK_?7X9gem-#K=',
-        'passwordIsHashed' => true]
+        'passwordIsHashed' => false]
     );
 }
 
