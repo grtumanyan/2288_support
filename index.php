@@ -108,7 +108,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 $("#question_list").append(res);
             });
 
-            window.scrollTo(0, document.body.scrollHeight);
+            $('html,body').animate({scrollTop: document.body.scrollHeight}, "fast");
         });
 
 
