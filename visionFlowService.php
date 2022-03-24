@@ -12,10 +12,15 @@ function login() {
     }
     $client->__setLocation('https://www.visionflow.com/service/VisionProject-v2/VisionProjectWebServiceService');
 
+//    $systemUser = $client->loginWithAPIKey2(array(
+//        'username' => $username,
+//        'password' => $password,
+//        'webserviceAPIKey' => $key
+//    ));
     $systemUser = $client->loginWithAPIKey2(array(
-        'username' => $username,
-        'password' => $password,
-        'webserviceAPIKey' => $key
+        'username' => 'beslutsstod.koppling@2288.se',
+        'password' => 'HncUK_?7X9gem-#K=',
+        'webserviceAPIKey' => 'qUTwkk7DvUvrr3NG'
     ));
 
     return $client;
