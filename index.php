@@ -107,8 +107,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 console.log(res);
                 $("#question_list").append(res);
             });
-            alert('asas');
-            $(document).scrollTop($(document).height());
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
 
