@@ -31,8 +31,8 @@ function checkUser($client)
 
 function findProjectIssues($client)
 {
-    return $client->findProjectIssues(array('queryObject' => array(
-        'actualTime' => 0,
+    return $client->findProjectIssues(
+        ['actualTime' => 0,
         'attachmentCount' => 0,
         'billingAmount' => 0,
         'buildNumber' => 0,
@@ -92,6 +92,6 @@ function findProjectIssues($client)
         'sourceDirection' => 0,
         'ticketId' => 0,
         'totalExpense' => 0,
-        'votes' => 0,
-    )));
+        'votes' => 0]
+    );
 }

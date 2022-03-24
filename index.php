@@ -9,7 +9,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/visionFlowService.php";
 //TODO: Return to this integration when we will have correct creds
 try {
     $client = login();
-    $result = checkUser($client);
+    $result = findProjectIssues($client);
 } catch (Exception $e) {
     var_dump($e->getMessage());
     exit;
