@@ -1,6 +1,4 @@
 <?php
-// Include config file
-require_once $_SERVER['DOCUMENT_ROOT'] . "/visionFlowConfig.php";
 
 function login() {
     //Log in:
@@ -12,11 +10,6 @@ function login() {
     }
     $client->__setLocation('https://www.visionflow.com/service/VisionProject-v2/VisionProjectWebServiceService');
 
-//    $systemUser = $client->loginWithAPIKey2(array(
-//        'username' => $username,
-//        'password' => $password,
-//        'webserviceAPIKey' => $key
-//    ));
     $systemUser = $client->loginWithAPIKey2(array(
         'username' => 'beslutsstod.koppling@2288.se',
         'password' => 'HncUK_?7X9gem-#K=',
@@ -26,10 +19,18 @@ function login() {
     return $client;
 }
 
-function findProjectIssues() {
+function checkUser($client)
+{
+    return $client->checkUser(array('queryObject' => array(
+        'username' => 'beslutsstod.koppling@2288.se',
+        'password' => 'HncUK_?7X9gem-#K=',
+        'passwordIsHashed' => true,
+    )));
+}
 
-    $client = login();
 
+function findProjectIssues($client)
+{
     return $client->findProjectIssues(array('queryObject' => array(
         'actualTime' => 0,
         'attachmentCount' => 0,
