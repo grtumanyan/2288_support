@@ -135,23 +135,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             <h4 class="d-flex justify-content-between text-center mb-3">
                 <span class="text-muted">Answer from points</span>
             </h4>
-            <p class="lead">Contrary to popular belief, Lorem Ipsum is not simply random text.
-                It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
-                Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,
-                looked up one of the more obscure Latin words, consectetur, from a
-                Lorem Ipsum passage, and going through the cites of the word in classical literature,
-                "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+            <p class="lead">Går bra att avvakta hemma, Rådgivning från 2288</p>
         </div>
         <div class="col-md-3 order-md-2 mb-4">
             <h4 class="d-flex justify-content-between text-center mb-3">
                 <span class="text-muted">Standard questions</span>
             </h4>
-            <p class="lead">Contrary to popular belief, Lorem Ipsum is not simply random text.
-                It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
-                Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,
-                looked up one of the more obscure Latin words, consectetur, from a
-                Lorem Ipsum passage, and going through the cites of the word in classical literature,
-                "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Cras justo odio</li>
+                <li class="list-group-item">Dapibus ac facilisis in</li>
+                <li class="list-group-item">Morbi leo risus</li>
+                <li class="list-group-item">Porta ac consectetur ac</li>
+                <li class="list-group-item">Vestibulum at eros</li>
+            </ul>
         </div>
         <div class="col-md-6 order-md-1 text-center">
             <?php if (!isset($_SESSION["ticket"])) { ?>
