@@ -90,7 +90,7 @@ function findProjectIssues($client)
         'subIssuesDoneInOrderHasBeenSet' => 0,
         'secondProjectId' => 0,
         'sourceDirection' => 0,
-        'ticketId' => 0,
+        'ticketId' => 'ID-4717',
         'totalExpense' => 0,
         'votes' => 0]
     );
