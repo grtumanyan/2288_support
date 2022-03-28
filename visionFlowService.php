@@ -56,6 +56,7 @@ function findProjectIssues($client)
         'issueEscalationLevelId' => 0,
         'issueUrgencyId' => 0,
         'issueRank' => 0,
+        'issueKey' => 'ID-4717',
         'issueResolutionId' => 0,
         'issueSeverityId' => 0,
         'issueStatusId' => 0,
@@ -90,7 +91,7 @@ function findProjectIssues($client)
         'subIssuesDoneInOrderHasBeenSet' => 0,
         'secondProjectId' => 0,
         'sourceDirection' => 0,
-        'ticketId' => 'ID-4717',
+        'ticketId' => 0,
         'totalExpense' => 0,
         'votes' => 0]
     );
