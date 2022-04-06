@@ -46,8 +46,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             try {
                 $client = login();
                 $result = findProjectIssues($client, $ticket);
-                var_dump($result);exit;
-                if ($result){
+//                var_dump($result);exit;
+                if (!empty($result)){
                     $_SESSION["ticket_data"] = $result;
                     $_SESSION["ticket"] = $ticket;
                 } else {
