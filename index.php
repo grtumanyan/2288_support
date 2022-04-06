@@ -45,11 +45,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($ticket_err)) {
             try {
                 $client = login();
-                $result = findProjectIssues($client, $ticket);
-                $tmp = (array) $result;
-                var_dump(empty($tmp));
-                var_dump($tmp);exit;
-                if ($result->count()){
+                $result = (array)findProjectIssues($client, $ticket);
+                if (empty($result)){
                     $_SESSION["ticket_data"] = $result;
                     $_SESSION["ticket"] = $ticket;
                 } else {
