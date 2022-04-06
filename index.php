@@ -48,8 +48,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if (empty($ticket_err)) {
             try {
-                // Store data in session variables
-                $_SESSION["ticket"] = $ticket;
+                $client = login();
+                $result = findProjectIssues($client, $ticket);
+                if ($result){
+                    $_SESSION["ticket_data"] = $result;
+                    $_SESSION["ticket"] = $ticket;
+                } else {
+                    $_SESSION["ticket_error"] = true;
+                }
             } catch (Exception $ex) {
                 //Log Exception
                 var_dump($ex->getMessage());
@@ -166,8 +172,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                 </form>
             </div>
-
-            <?php } else { ?>
+            <?php
+                if(!empty($_SESSION["ticket_error"])){
+                    echo '<div class="alert alert-danger">Ticket number is not exist in Visionflow</div>';
+                }
+            } else { ?>
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="mb-4">
                     <input type="hidden" class="form-control" name="rebootTicket">
                     <div class="input-group-append">

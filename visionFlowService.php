@@ -10,7 +10,7 @@ function login() {
     }
     $client->__setLocation('https://www.visionflow.com/service/VisionProject-v2/VisionProjectWebServiceService');
 
-    $systemUser = $client->loginWithAPIKey2(array(
+    $client->loginWithAPIKey2(array(
         'username' => 'beslutsstod.koppling@2288.se',
         'password' => 'HncUK_?7X9gem-#K=',
         'webserviceAPIKey' => 'qUTwkk7DvUvrr3NG'
@@ -29,7 +29,7 @@ function checkUser($client)
 }
 
 
-function findProjectIssues($client)
+function findProjectIssues($client, $issueKey)
 {
     return $client->findProjectIssues(array('queryObject' => array(
         'actualTime' => 0,
@@ -60,7 +60,7 @@ function findProjectIssues($client)
         'issueStatusId' => 0,
         'issueTemplateTypeId' => 0,
         'issueTypeId' => 0,
-        'issueKey' => 'ID-4685',
+        'issueKey' => $issueKey,
         'issueUrgencyId' => 0,
         'lastRepliedById' => 0,
         'latestReplyIsBySupportUser' => 0,
@@ -96,3 +96,8 @@ function findProjectIssues($client)
         'votes' => 0,
     )));
 }
+
+function storeProjectDocument($client, $file) {
+
+}
+
