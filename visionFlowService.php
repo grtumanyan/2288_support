@@ -60,6 +60,7 @@ function findProjectIssues($client)
         'issueStatusId' => 0,
         'issueTemplateTypeId' => 0,
         'issueTypeId' => 0,
+        'issueKey' => 'ID-4685',
         'issueUrgencyId' => 0,
         'lastRepliedById' => 0,
         'latestReplyIsBySupportUser' => 0,
