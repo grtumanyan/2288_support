@@ -13,6 +13,10 @@ try {
     var_dump($e->getMessage());
     exit;
 }
+foreach ($result as $v){
+    var_dump($v);exit;
+
+}
 var_dump($result);exit;
 
 if (isset($_GET['debug'])) {

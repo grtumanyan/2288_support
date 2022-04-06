@@ -56,7 +56,7 @@ function findProjectIssues($client)
         'issueEscalationLevelId' => 0,
         'issueUrgencyId' => 0,
         'issueRank' => 0,
-        'issueKey' => '4717',
+        'issueKey' => 0,
         'issueResolutionId' => 0,
         'issueSeverityId' => 0,
         'issueStatusId' => 0,
