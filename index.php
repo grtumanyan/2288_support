@@ -15,7 +15,6 @@ try {
 }
 foreach ($result as $v){
     var_dump($v);exit;
-
 }
 var_dump($result);exit;
 

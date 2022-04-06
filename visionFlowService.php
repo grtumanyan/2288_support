@@ -31,8 +31,8 @@ function checkUser($client)
 
 function findProjectIssues($client)
 {
-    return $client->findProjectIssues(
-        ['actualTime' => 0,
+    return $client->findProjectIssues(array('queryObject' => array(
+        'actualTime' => 0,
         'attachmentCount' => 0,
         'billingAmount' => 0,
         'buildNumber' => 0,
@@ -47,21 +47,20 @@ function findProjectIssues($client)
         'customerId' => 0,
         'fixedPrice' => 0,
         'fixedTime' => 0,
+        'issueCreatedBySystemUserId' => 0,
+        'issueEscalationLevelId' => 0,
         'isVoteable' => 0,
         'isVoteableHasBeenSet' => 0,
         'issueNotIncludedInRecurringSeries' => 0,
         'issueNotIncludedInRecurringSeriesHasBeenSet' => 0,
         'issuePriorityId' => 0,
-        'issueCreatedBySystemUserId' => 0,
-        'issueEscalationLevelId' => 0,
-        'issueUrgencyId' => 0,
         'issueRank' => 0,
-        'issueKey' => 0,
         'issueResolutionId' => 0,
         'issueSeverityId' => 0,
         'issueStatusId' => 0,
         'issueTemplateTypeId' => 0,
         'issueTypeId' => 0,
+        'issueUrgencyId' => 0,
         'lastRepliedById' => 0,
         'latestReplyIsBySupportUser' => 0,
         'latestReplyIsBySupportUserHasBeenSet' => 0,
@@ -85,14 +84,14 @@ function findProjectIssues($client)
         'SLAPlanId' => 0,
         'SLAPlanManually' => 0,
         'SLAPlanManuallyHasBeenSet' => 0,
+        'secondProjectId' => 0,
+        'sourceDirection' => 0,
         'storyPoints' => 0,
         'subIssueOrder' => 0,
         'subIssuesDoneInOrder' => 0,
         'subIssuesDoneInOrderHasBeenSet' => 0,
-        'secondProjectId' => 0,
-        'sourceDirection' => 0,
         'ticketId' => 0,
         'totalExpense' => 0,
-        'votes' => 0]
-    );
+        'votes' => 0,
+    )));
 }
