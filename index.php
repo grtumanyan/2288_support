@@ -47,10 +47,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 $client = login();
                 $result = (array)findProjectIssues($client, $ticket);
                 if (empty($result)){
+                    $_SESSION["ticket_error"] = true;
+                } else {
                     $_SESSION["ticket_data"] = $result;
                     $_SESSION["ticket"] = $ticket;
-                } else {
-                    $_SESSION["ticket_error"] = true;
                 }
             } catch (Exception $ex) {
                 //Log Exception
