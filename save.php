@@ -1,5 +1,5 @@
 <?php
-var_dump('1');exit;
+
 $host = 'support_db';
 $db = 'support';
 $user = 'root';
@@ -36,7 +36,7 @@ try {
 }catch(Exception $ex){
     //Log Exception
 
-    var_dump($ex->getMessage());
+    var_dump($ex->getMessage());exit;
 }
 
 
