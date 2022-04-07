@@ -51,6 +51,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 } else {
                     $_SESSION["ticket_data"] = $result;
                     $_SESSION["ticket"] = $ticket;
+                    $_SESSION["ticket_error"] = false;
                 }
             } catch (Exception $ex) {
                 //Log Exception
@@ -170,7 +171,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <?php
                 if(!empty($_SESSION["ticket_error"])){
-                    echo '<div class="alert alert-danger">Ticket number is not exist in Visionflow</div>';
+                    echo '<div class="alert alert-danger">Ticket number does not exist in Visionflow</div>';
                 }
             } else { ?>
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="mb-4">
