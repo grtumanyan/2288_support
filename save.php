@@ -1,6 +1,6 @@
 <?php
 
-$host = 'support_db';
+$host = 'localhost';
 $db = 'support';
 $user = 'root';
 $password = 'password';
