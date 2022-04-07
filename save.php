@@ -23,7 +23,14 @@ try {
 
         $pdo->exec($query);
 
-        $file = file_put_contents($_SERVER['DOCUMENT_ROOT'] . '/docs/' . uniqid(rand(), true) .'.txt', print_r($data, true), FILE_APPEND);
+        try {
+            $file = file_put_contents($_SERVER['DOCUMENT_ROOT'] . '/docs/' . uniqid(rand(), true) .'.txt', print_r($data, true), FILE_APPEND);
+            var_dump($file);exit;
+        }
+        catch(Exception $ex){
+            //Log Exception
+            var_dump($ex->getMessage());exit;
+        }
 
     }
 }catch(Exception $ex){
