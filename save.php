@@ -1,5 +1,5 @@
 <?php
-
+var_dump('1');exit;
 $host = 'support_db';
 $db = 'support';
 $user = 'root';
