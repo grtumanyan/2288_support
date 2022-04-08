@@ -13,7 +13,7 @@ try {
     var_dump($e->getMessage());
     exit;
 }
-
+var_dump($result);exit;
 //try {
 //    $client = login();
 //    $result = findProjectIssues($client);
