@@ -24,15 +24,12 @@ try {
         try {
 //            $file = file_put_contents($_SERVER['DOCUMENT_ROOT'] . '/docs/' . uniqid() .'.txt', print_r($data, true));
 
-            $myfile = file_put_contents('test.txt', $data.PHP_EOL , FILE_APPEND | LOCK_EX);
-
-            var_dump($myfile);exit;
 // Second option is this
             $myfile = fopen("test.txt", "a") or die("Unable to open file!");
-            $txt = "user id date";
+            $txt = "test";
             fwrite($myfile, "\n". $txt);
             fclose($myfile);
-            var_dump($file);exit;
+            var_dump($myfile);exit;
         }
         catch(Exception $ex){
             //Log Exception
