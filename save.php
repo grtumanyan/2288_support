@@ -19,12 +19,11 @@ try {
     $data = json_encode($data);
     if ($pdo) {
         $query = "INSERT INTO answers (data) VALUES('$data')";
-
-
         $pdo->exec($query);
 
         try {
-            $file = file_put_contents($_SERVER['DOCUMENT_ROOT'] . '/docs/' . uniqid(rand(), true) .'.txt', print_r($data, true), FILE_APPEND);
+            $file = file_put_contents($_SERVER['DOCUMENT_ROOT'] . '/docs/' . uniqid() .'.txt', print_r($data, true));
+            var_dump($file);exit;
         }
         catch(Exception $ex){
             //Log Exception
