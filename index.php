@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 require_once $_SERVER['DOCUMENT_ROOT'] . "/visionFlowService.php";
 
 try {
-    $r = fopen("test.txt", "a");
+    $r = fopen($_SERVER['DOCUMENT_ROOT'] . "/docs/test.txt", "a+");
     var_dump($r);
 }catch (Exception $e){
     var_dump($e->getMessage());exit;
