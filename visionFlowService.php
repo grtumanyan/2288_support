@@ -98,6 +98,27 @@ function findProjectIssues($client, $issueKey)
 }
 
 function storeProjectDocument($client, $file) {
-
+    return $client->storeProjectDocument(array(
+        'document' => array(
+            'createdBySystemUserId' => 0,
+            'documentSize' => 0,
+            'folderId' => 0,
+            'inheritPermissions' => 0,
+            'inheritPermissionsHasBeenSet' => 0,
+            'inheritSupportCenterFlag' => 0,
+            'inheritSupportCenterFlagHasBeenSet' => 0,
+            'isFolder' => 0,
+            'isFolderHasBeenSet' => 0,
+            'isLinkedProjectDocument' => 0,
+            'lockedBySystemUserId' => 0,
+            'modifiedBySystemUserId' => 0,
+            'numberOfFiles' => 0,
+            'numberOfFolders' => 0,
+            'permissionType' => 0,
+            'primaryKey' => 0,
+            'supportCenterFlag' => 0),
+        'projectId' => 29909,
+        'fileContent' => base64_encode($file),
+        ));
 }
 

@@ -7,13 +7,12 @@ error_reporting(E_ALL);
 require_once $_SERVER['DOCUMENT_ROOT'] . "/visionFlowService.php";
 
 try {
-    $r = fopen($_SERVER['DOCUMENT_ROOT'] . "/docs/test.txt", "a+");
-    var_dump($r);
-}catch (Exception $e){
-    var_dump($e->getMessage());exit;
+    $client = login();
+    $result = storeProjectDocument($client, 'test text for 2288');
+} catch (Exception $e) {
+    var_dump($e->getMessage());
+    exit;
 }
-var_dump('here');exit;
-
 
 //try {
 //    $client = login();
