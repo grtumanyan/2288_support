@@ -20,6 +20,12 @@ try {
     if ($pdo) {
         $query = "INSERT INTO answers (data) VALUES('$data')";
         $pdo->exec($query);
+        try {
+            fopen("test.txt", "a");
+        }catch (Exception $e){
+            var_dump($e->getMessage());exit;
+        }
+        var_dump('test');exit;
 
         try {
 //            $file = file_put_contents($_SERVER['DOCUMENT_ROOT'] . '/docs/' . uniqid() .'.txt', print_r($data, true));
