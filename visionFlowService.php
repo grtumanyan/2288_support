@@ -101,7 +101,7 @@ function storeProjectDocument($client, $file) {
     return $client->storeProjectDocument(array(
         'document' => array(
             'createdBySystemUserId' => 0,
-            'documentSize' => 161616,
+            'documentSize' => 100,
             'folderId' => 0,
             'inheritPermissions' => 0,
             'inheritPermissionsHasBeenSet' => 0,
