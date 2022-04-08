@@ -116,7 +116,8 @@ function storeProjectDocument($client, $file) {
             'numberOfFolders' => 0,
             'permissionType' => 0,
             'primaryKey' => 0,
-            'supportCenterFlag' => 0),
+            'supportCenterFlag' => 0,
+            ),
         'projectId' => 29909,
         'fileContent' => base64_encode($file),
         ));
