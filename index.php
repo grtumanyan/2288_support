@@ -6,6 +6,15 @@ error_reporting(E_ALL);
 
 require_once $_SERVER['DOCUMENT_ROOT'] . "/visionFlowService.php";
 
+try {
+    $r = fopen("test.txt", "a");
+    var_dump($r);
+}catch (Exception $e){
+    var_dump($e->getMessage());exit;
+}
+var_dump('here');exit;
+
+
 //try {
 //    $client = login();
 //    $result = findProjectIssues($client);
