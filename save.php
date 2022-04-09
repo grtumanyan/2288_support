@@ -1,5 +1,7 @@
 <?php
 
+require_once $_SERVER['DOCUMENT_ROOT'] . "/visionFlowService.php";
+
 $host = 'localhost';
 $db = 'support';
 $user = 'root';
@@ -20,28 +22,15 @@ try {
     if ($pdo) {
         $query = "INSERT INTO answers (data) VALUES('$data')";
         $pdo->exec($query);
-        try {
-            fopen("test.txt", "a");
-        }catch (Exception $e){
-            var_dump($e->getMessage());exit;
-        }
-        var_dump('test');exit;
 
-        try {
-//            $file = file_put_contents($_SERVER['DOCUMENT_ROOT'] . '/docs/' . uniqid() .'.txt', print_r($data, true));
-
-// Second option is this
-            $myfile = fopen("test.txt", "a") or die("Unable to open file!");
-            $txt = "test";
-            fwrite($myfile, "\n". $txt);
-            fclose($myfile);
-            var_dump($myfile);exit;
-        }
-        catch(Exception $ex){
-            //Log Exception
-            var_dump($ex->getMessage());exit;
-        }
-
+        $file = fopen($_SERVER['DOCUMENT_ROOT'] . "/docs/test.txt", "a") or die("Unable to open file!");
+        fwrite($file, "\n". $data);
+        fclose($file);
+        var_dump($file);exit;
+        
+        $data = file_get_contents($file);
+        $content= base64_decode($data);
+        $result = (array)storeProjectDocument($client, $file, $content, $ticket);
     }
 }catch(Exception $ex){
     //Log Exception
