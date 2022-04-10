@@ -97,7 +97,7 @@ function findProjectIssues($client, $issueKey)
     )));
 }
 
-function storeProjectDocument($client, $file, $content, $ticketNumber) {
+function storeIssueDocument($client, $file, $content, $ticketNumber) {
     return $client->storeIssueDocument(array(
         'document' => array(
             'createdBySystemUserId' => 0,

@@ -7,8 +7,15 @@ error_reporting(E_ALL);
 require_once $_SERVER['DOCUMENT_ROOT'] . "/visionFlowService.php";
 
 try {
+    $data = 'test text';
+    $file = fopen($_SERVER['DOCUMENT_ROOT'] . "/docs/test.txt", "a") or die("Unable to open file!");
+    fwrite($file, "\n". $data);
+    fclose($file);
+    var_dump($file);exit;
+
+
     $client = login();
-    $result = storeProjectDocument($client, 'test text for 2288');
+    $result = storeIssueDocument($client, 'test text for 2288');
 } catch (Exception $e) {
     var_dump($e->getMessage());
     exit;

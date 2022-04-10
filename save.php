@@ -27,10 +27,10 @@ try {
         fwrite($file, "\n". $data);
         fclose($file);
         var_dump($file);exit;
-        
+
         $data = file_get_contents($file);
         $content= base64_decode($data);
-        $result = (array)storeProjectDocument($client, $file, $content, $ticket);
+        $result = (array)storeIssueDocument($client, $file, $content, $ticket);
     }
 }catch(Exception $ex){
     //Log Exception
