@@ -77,6 +77,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST["rebootTicket"])) {
         try {
             unset ($_SESSION["ticket"]);
+            unset ($_SESSION["ticket_data"]);
+            unset ($_SESSION["ticket_error"]);
+            unset ($_SESSION["ticket_points"]);
         } catch (Exception $ex) {
             //Log Exception
             var_dump($ex->getMessage());
@@ -170,23 +173,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             </ul>
         </div>
         <div class="col-md-6 order-md-1 text-center">
-            <?php if (!isset($_SESSION["ticket"])) { ?>
-            <button type="button" id="btnNumberArea" class="btn btn-primary btn-rounded mb-4">Starta nytt beslutsstöd</button>
-            <div id="numberArea" style="display:none">
-                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="mb-4">
-                    <div class="input-group">
-                        <input type="number" class="form-control" placeholder="Number" name="ticket">
-                        <div class="input-group-append">
-                            <button type="submit" class="btn btn-secondary">Spara</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <?php
-                if(!empty($_SESSION["ticket_error"])){
-                    echo '<div class="alert alert-danger">Ticket number does not exist in Visionflow</div>';
-                }
-            } else { ?>
+            <?php if (!isset($_SESSION["ticket_points"])) { ?>
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="mb-4">
                     <input type="hidden" class="form-control" name="rebootTicket">
                     <div class="input-group-append">
@@ -194,14 +181,42 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                 </form>
                 <h4 class="mb-4 lead">Ticket Number: <?= $_SESSION["ticket"]; ?></h4>
+                <h4 class="mb-4 lead">POINTS: <?= $_SESSION["ticket_points"]; ?></h4>
+                <h4 class="mb-4 lead">ANSWER: <?= 'test' ?></h4>
                 <hr>
-                <form action="/save.php" method="POST" class="mb-4">
-                    <div id="question_list" style="">
+            <?php } else { ?>
+                <?php if (!isset($_SESSION["ticket"])) { ?>
+                <button type="button" id="btnNumberArea" class="btn btn-primary btn-rounded mb-4">Starta nytt beslutsstöd</button>
+                <div id="numberArea" style="display:none">
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="mb-4">
+                        <div class="input-group">
+                            <input type="number" class="form-control" placeholder="Number" name="ticket">
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-secondary">Spara</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <?php
+                    if(!empty($_SESSION["ticket_error"])){
+                        echo '<div class="alert alert-danger">Ticket number does not exist in Visionflow</div>';
+                    }
+                } else { ?>
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="mb-4">
+                        <input type="hidden" class="form-control" name="rebootTicket">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-secondary">Want to delete old ticket number and input new one? Click here.</button>
+                        </div>
+                    </form>
+                    <h4 class="mb-4 lead">Ticket Number: <?= $_SESSION["ticket"]; ?></h4>
+                    <hr>
+                    <form action="/save.php" method="POST" class="mb-4">
+                        <div id="question_list" style="">
 
-                    </div>
-                </form>
+                        </div>
+                    </form>
+                <?php } ?>
             <?php } ?>
-
         </div>
     </div>
 </div>

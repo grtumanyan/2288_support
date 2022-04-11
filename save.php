@@ -30,10 +30,12 @@ try {
         $file = file_put_contents($fileName, print_r($data, true));
         $ticket = $_SESSION["ticket"];
         //
-        $res = countPoints($data);
+        $points = countPoints($data);
         //
         $client = login();
+        //TODO: test this
         $result = (array)storeIssueDocument($client, $file, $ticket);
+        $_SESSION["ticket_points"] = $points;
         unlink($fileName);
     }
 }catch(Exception $ex){
