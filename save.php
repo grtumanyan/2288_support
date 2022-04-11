@@ -13,15 +13,12 @@ $db = 'support';
 $user = 'root';
 $password = 'password';
 
-
 $dsn = "mysql:host=$host;dbname=$db;charset=UTF8";
-var_dump($_POST);exit;
 
 if (!empty($_POST)) {
     $data = array_map ( 'htmlspecialchars' , $_POST );
 }
 var_dump($data);exit;
-
 try {
     $pdo = new PDO($dsn, $user, $password);
 
