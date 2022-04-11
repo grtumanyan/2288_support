@@ -35,7 +35,6 @@ try {
         $client = login();
         $result = (array)storeIssueDocument($client, $file, $ticket);
         unlink($fileName);
-
     }
 }catch(Exception $ex){
     //Log Exception

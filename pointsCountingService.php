@@ -226,6 +226,5 @@ function countPoints($data) {
             $count += $point;
         }
     }
-    var_dump($count);exit;
     return $count;
 }
