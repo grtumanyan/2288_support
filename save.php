@@ -1,6 +1,7 @@
 <?php
 
 require_once $_SERVER['DOCUMENT_ROOT'] . "/visionFlowService.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/pointsCountingService.php";
 
 $host = 'localhost';
 $db = 'support';
@@ -23,18 +24,16 @@ try {
         $query = "INSERT INTO answers (data) VALUES('$data')";
         $pdo->exec($query);
 
-        $file = fopen($_SERVER['DOCUMENT_ROOT'] . "/docs/test.txt", "a") or die("Unable to open file!");
-        fwrite($file, "\n". $data);
-        fclose($file);
-        var_dump($file);exit;
-
-        $data = file_get_contents($file);
-        $content= base64_decode($data);
-        $result = (array)storeIssueDocument($client, $file, $content, $ticket);
+        $file = file_put_contents($_SERVER['DOCUMENT_ROOT'] . "/docs/test.txt", print_r($data, true));
+        $ticket = $_SESSION["ticket"];
+        //
+        $res = count($data);
+        //
+        $client = login();
+        $result = (array)storeIssueDocument($client, $file, $ticket);
     }
 }catch(Exception $ex){
     //Log Exception
-
     var_dump($ex->getMessage());
 }
 

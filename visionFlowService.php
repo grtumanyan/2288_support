@@ -97,7 +97,7 @@ function findProjectIssues($client, $issueKey)
     )));
 }
 
-function storeIssueDocument($client, $file, $content, $ticketNumber) {
+function storeIssueDocument($client, $file, $ticketNumber) {
     return $client->storeIssueDocument(array(
         'document' => array(
             'createdBySystemUserId' => 0,
@@ -119,7 +119,7 @@ function storeIssueDocument($client, $file, $content, $ticketNumber) {
             'supportCenterFlag' => 0,
         ),
         'projectIssueId' => $ticketNumber,
-        'fileContent' => $content,
+        'fileContent' => base64_decode($file),
     ));
 }
 
