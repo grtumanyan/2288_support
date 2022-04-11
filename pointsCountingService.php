@@ -219,11 +219,10 @@ function countPoints($data) {
         ];
     $animal = $data['Djurslag'];
     $count = 0;
-    var_dump($data);exit;
 
     foreach ($data as $key=>$value) {
-        if (array_key_exists($key, $points[$animal])){
-            $point = $points[$animal][$key][$value];
+        if (array_key_exists(str_replace('_', ' ', $key), $points[$animal])){
+            $point = $points[$animal][str_replace('_', ' ', $key)][$value];
             $count += $point;
         }
     }
