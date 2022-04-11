@@ -19,6 +19,7 @@ $dsn = "mysql:host=$host;dbname=$db;charset=UTF8";
 if (!empty($_POST)) {
     $data = $_POST;
 }
+var_dump($data);exit;
 
 try {
     $pdo = new PDO($dsn, $user, $password);
