@@ -158,7 +158,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             <h4 class="d-flex justify-content-between text-center mb-3">
                 <span class="text-muted">Beslutsstödets svar</span>
             </h4>
-            <p class="lead">Går bra att avvakta hemma, Rådgivning från 2288</p>
+            <?php if (isset($_SESSION["ticket_points"])) { ?>
+                <?php if ($_SESSION["ticket_points"] < 50) { ?>
+                    <p class="lead">Går bra att avvakta hemma, Rådgivning från 2288</p>
+                <?php } elseif ($_SESSION["ticket_points"] >= 50 && $_SESSION["ticket_points"] <= 200) { ?>
+                    <p class="lead">Kontakta Firstvet</p>
+                <?php } elseif ($_SESSION["ticket_points"] > 200) { ?>
+                    <p class="lead">Åk till klinik</p>
+                <?php } ?>
+            <?php } ?>
         </div>
         <div class="col-md-3 order-md-2 mb-4">
             <h4 class="d-flex justify-content-between text-center mb-3">
@@ -181,7 +189,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                 </form>
                 <h4 class="mb-4 lead">Ticket Number: <?= $_SESSION["ticket"]; ?></h4>
-                <h4 class="mb-4 lead">POINTS: <?= $_SESSION["ticket_points"]; ?></h4>
+<!--                <h4 class="mb-4 lead">POINTS: --><?//= $_SESSION["ticket_points"]; ?><!--</h4>-->
+
                 <h4 class="mb-4 lead">ANSWER: <?= 'test' ?></h4>
                 <hr>
             <?php } else { ?>
