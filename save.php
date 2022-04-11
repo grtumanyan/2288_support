@@ -15,6 +15,7 @@ $password = 'password';
 
 
 $dsn = "mysql:host=$host;dbname=$db;charset=UTF8";
+var_dump($_POST);exit;
 
 if (!empty($_POST)) {
     $data = array_map ( 'htmlspecialchars' , $_POST );
