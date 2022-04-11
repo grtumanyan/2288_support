@@ -27,14 +27,16 @@ try {
     if ($pdo) {
         $query = "INSERT INTO answers (data) VALUES('$dataForDB')";
         $pdo->exec($query);
-
-        $file = file_put_contents($_SERVER['DOCUMENT_ROOT'] . "/docs/".uniqid().".txt", print_r($data, true));
+        $fileName = $_SERVER['DOCUMENT_ROOT'] . "/docs/".uniqid().".txt";
+        $file = file_put_contents($fileName, print_r($data, true));
         $ticket = $_SESSION["ticket"];
         //
         $res = countPoints($data);
         //
         $client = login();
         $result = (array)storeIssueDocument($client, $file, $ticket);
+        unlink($fileName);
+
     }
 }catch(Exception $ex){
     //Log Exception
