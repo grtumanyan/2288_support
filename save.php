@@ -19,17 +19,16 @@ $dsn = "mysql:host=$host;dbname=$db;charset=UTF8";
 if (!empty($_POST)) {
     $data = $_POST;
 }
-var_dump($data);exit;
 
 try {
     $pdo = new PDO($dsn, $user, $password);
 
-    $data = json_encode($data);
+    $dataForDB = json_encode($data);
     if ($pdo) {
-        $query = "INSERT INTO answers (data) VALUES('$data')";
+        $query = "INSERT INTO answers (data) VALUES('$dataForDB')";
         $pdo->exec($query);
 
-        $file = file_put_contents($_SERVER['DOCUMENT_ROOT'] . "/docs/test.txt", print_r($data, true));
+        $file = file_put_contents($_SERVER['DOCUMENT_ROOT'] . "/docs/".uniqid().".txt", print_r($data, true));
         $ticket = $_SESSION["ticket"];
         //
         $res = countPoints($data);
