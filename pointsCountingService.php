@@ -112,7 +112,7 @@ $points = [
     ],
 ];
 
-function count($data) {
+function countPoints($data) {
 
     $points = 0;
 var_dump($data);exit;

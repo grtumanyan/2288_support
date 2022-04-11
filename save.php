@@ -31,7 +31,7 @@ try {
         $file = file_put_contents($_SERVER['DOCUMENT_ROOT'] . "/docs/test.txt", print_r($data, true));
         $ticket = $_SESSION["ticket"];
         //
-        $res = count($data);
+        $res = countPoints($data);
         //
         $client = login();
         $result = (array)storeIssueDocument($client, $file, $ticket);
