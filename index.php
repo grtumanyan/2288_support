@@ -173,7 +173,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             </ul>
         </div>
         <div class="col-md-6 order-md-1 text-center">
-            <?php if (!isset($_SESSION["ticket_points"])) { ?>
+            <?php if (isset($_SESSION["ticket_points"])) { ?>
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="mb-4">
                     <input type="hidden" class="form-control" name="rebootTicket">
                     <div class="input-group-append">
