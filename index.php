@@ -189,9 +189,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                 </form>
                 <h4 class="mb-4 lead">Ticket Number: <?= $_SESSION["ticket"]; ?></h4>
-<!--                <h4 class="mb-4 lead">POINTS: --><?//= $_SESSION["ticket_points"]; ?><!--</h4>-->
-
-                <h4 class="mb-4 lead">ANSWER: <?= 'test' ?></h4>
+                <h4 class="mb-4 lead">POINTS: <?= $_SESSION["ticket_points"]; ?></h4>
                 <hr>
             <?php } else { ?>
                 <?php if (!isset($_SESSION["ticket"])) { ?>
