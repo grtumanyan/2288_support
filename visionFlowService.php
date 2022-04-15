@@ -102,7 +102,7 @@ function storeIssueDocument($client, $file, $ticketNumber) {
         'document' => array(
             'createdBySystemUserId' => 0,
 //            'documentSize' => filesize($file),
-            'documentSize' => stat(iconv('UTF-8', 'ISO-8859-1', $file)),
+            'documentSize' => round(filesize($file) / 1024 / 1024, 1),
             'folderId' => 0,
             'inheritPermissions' => 0,
             'inheritPermissionsHasBeenSet' => 0,
