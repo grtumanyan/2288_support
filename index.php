@@ -168,7 +168,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 <?php } ?>
             <?php } ?>
         </div>
-        <div class="col-md-3 order-md-2 mb-4">
+        <div class="col-md-3 order-md-2 mb-4 card sticky-top">
             <h4 class="d-flex justify-content-between text-center mb-3">
                 <span class="text-muted">Standard questions</span>
             </h4>
@@ -221,6 +221,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                         <div id="question_list" style="">
 
                         </div>
+                        <div><button type="submit">Save</button></div>
                     </form>
                 <?php } ?>
             <?php } ?>

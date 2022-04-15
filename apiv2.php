@@ -168,9 +168,10 @@ HTML;
             </select>
     </div>
 HTML;
-        } else {
-            $text = '  <div><button type="submit">Save</button></div>';
         }
+//        else {
+//            $text = '  <div><button type="submit">Save</button></div>';
+//        }
 
         echo $text;
         exit;
