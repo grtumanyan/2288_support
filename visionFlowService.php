@@ -101,7 +101,8 @@ function storeIssueDocument($client, $file, $ticketNumber) {
     return $client->storeIssueDocument(array(
         'document' => array(
             'createdBySystemUserId' => 0,
-            'documentSize' => filesize($file),
+//            'documentSize' => filesize($file),
+            'documentSize' => filesize(iconv('UTF-8', 'ISO-8859-1', $file)),
             'folderId' => 0,
             'inheritPermissions' => 0,
             'inheritPermissionsHasBeenSet' => 0,
@@ -119,7 +120,7 @@ function storeIssueDocument($client, $file, $ticketNumber) {
             'supportCenterFlag' => 0,
         ),
         'projectIssueId' => $ticketNumber,
-        'fileContent' => base64_decode($file),
+        'fileContent' => base64_decode(iconv('UTF-8', 'ISO-8859-1', $file)),
     ));
 }
 
