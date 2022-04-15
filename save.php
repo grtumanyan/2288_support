@@ -35,7 +35,7 @@ try {
         $client = login();
         //TODO: test this
         $result = (array)storeIssueDocument($client, $fileName, $ticket);
-        var_dump($result);exit;
+//        var_dump($result);exit;
         $_SESSION["ticket_points"] = $points;
         unlink($fileName);
     }
