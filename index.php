@@ -216,7 +216,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
 
-    <div class="card sticky-bottom">
+    <div class="sticky-bottom">
         <h4 class="d-flex justify-content-between text-center mb-3">
             <span class="text-muted">Standard questions</span>
         </h4>
@@ -228,6 +228,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             <li class="list-group-item">Vestibulum at eros</li>
         </ul>
     </div>
+    <br>
+    <br>
 </div>
 </body>
 
