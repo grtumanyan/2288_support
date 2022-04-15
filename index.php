@@ -152,6 +152,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         <h2>2288 support page</h2>
         <p class="lead">Below you can find support functionalities for 2288.</p>
     </div>
+    <div class="card sticky-top">
+        ...Something
+    </div>
 
     <div class="row">
         <div class="col-md-3 order-md-3 mb-4">
@@ -168,7 +171,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 <?php } ?>
             <?php } ?>
         </div>
-        <div class="col-md-3 order-md-2 mb-4 card sticky-top">
+        <div class="col-md-3 order-md-2 mb-4">
             <h4 class="d-flex justify-content-between text-center mb-3">
                 <span class="text-muted">Standard questions</span>
             </h4>
