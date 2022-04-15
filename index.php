@@ -152,18 +152,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         <h2>2288 support page</h2>
         <p class="lead">Below you can find support functionalities for 2288.</p>
     </div>
-    <div class="card sticky-top">
-        <h4 class="d-flex justify-content-between text-center mb-3">
-            <span class="text-muted">Standard questions</span>
-        </h4>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">Cras justo odio</li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Morbi leo risus</li>
-            <li class="list-group-item">Porta ac consectetur ac</li>
-            <li class="list-group-item">Vestibulum at eros</li>
-        </ul>
-    </div>
 
     <div class="row">
         <div class="col-md-6 order-md-2 mb-4">
@@ -226,6 +214,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 <?php } ?>
             <?php } ?>
         </div>
+    </div>
+
+    <div class="card sticky-bottom">
+        <h4 class="d-flex justify-content-between text-center mb-3">
+            <span class="text-muted">Standard questions</span>
+        </h4>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Morbi leo risus</li>
+            <li class="list-group-item">Porta ac consectetur ac</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
     </div>
 </div>
 </body>
