@@ -97,12 +97,11 @@ function findProjectIssues($client, $issueKey)
     )));
 }
 
-function storeIssueDocument($client, $file, $ticketNumber) {
+function storeIssueDocument($client, $fileName, $ticketNumber) {
     return $client->storeIssueDocument(array(
         'document' => array(
             'createdBySystemUserId' => 0,
-//            'documentSize' => filesize($file),
-            'documentSize' => round(filesize($file) / 1024 / 1024, 1),
+            'documentSize' => round(filesize($fileName) / 1024 / 1024, 1),
             'folderId' => 0,
             'inheritPermissions' => 0,
             'inheritPermissionsHasBeenSet' => 0,
@@ -120,7 +119,7 @@ function storeIssueDocument($client, $file, $ticketNumber) {
             'supportCenterFlag' => 0,
         ),
         'projectIssueId' => $ticketNumber,
-        'fileContent' => base64_decode(iconv('UTF-8', 'ISO-8859-1', $file)),
+        'fileContent' => base64_decode(file_get_contents($fileName)),
     ));
 }
 
