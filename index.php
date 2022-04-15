@@ -153,11 +153,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         <p class="lead">Below you can find support functionalities for 2288.</p>
     </div>
     <div class="card sticky-top">
-        ...Something
+        <h4 class="d-flex justify-content-between text-center mb-3">
+            <span class="text-muted">Standard questions</span>
+        </h4>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Morbi leo risus</li>
+            <li class="list-group-item">Porta ac consectetur ac</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
     </div>
 
     <div class="row">
-        <div class="col-md-3 order-md-3 mb-4">
+        <div class="col-md-6 order-md-2 mb-4">
             <h4 class="d-flex justify-content-between text-center mb-3">
                 <span class="text-muted">Beslutsstödets svar</span>
             </h4>
@@ -170,18 +179,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                     <p class="lead">Åk till klinik</p>
                 <?php } ?>
             <?php } ?>
-        </div>
-        <div class="col-md-3 order-md-2 mb-4">
-            <h4 class="d-flex justify-content-between text-center mb-3">
-                <span class="text-muted">Standard questions</span>
-            </h4>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Morbi leo risus</li>
-                <li class="list-group-item">Porta ac consectetur ac</li>
-                <li class="list-group-item">Vestibulum at eros</li>
-            </ul>
         </div>
         <div class="col-md-6 order-md-1 text-center">
             <?php if (isset($_SESSION["ticket_points"])) { ?>
