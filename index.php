@@ -6,27 +6,6 @@ error_reporting(E_ALL);
 
 require_once $_SERVER['DOCUMENT_ROOT'] . "/visionFlowService.php";
 
-//try {
-//    $data = ['test text'];
-//
-//    $r = file_put_contents($_SERVER['DOCUMENT_ROOT'] . "/docs/test.txt", print_r($data, true));
-//    var_dump($r);exit;
-//
-//    $data = 'test text';
-//    $file = fopen($_SERVER['DOCUMENT_ROOT'] . "/docs/test.txt", "a") or die("Unable to open file!");
-//    fwrite($file, "\n". $data);
-//    fclose($file);
-//    var_dump($file);exit;
-//
-//
-//    $client = login();
-//    $result = storeIssueDocument($client, 'test text for 2288');
-//} catch (Exception $e) {
-//    var_dump($e->getMessage());
-//    exit;
-//}
-//var_dump($result);exit;
-
 if (isset($_GET['debug'])) {
     session_start();
     $_SESSION['debug'] = 1;
