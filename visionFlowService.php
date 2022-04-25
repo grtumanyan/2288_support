@@ -60,7 +60,7 @@ function findProjectIssues($client, $issueKey)
         'issueStatusId' => 0,
         'issueTemplateTypeId' => 0,
         'issueTypeId' => 0,
-        'issueKey' => $issueKey,
+        'issueKey' => 'ID-' . $issueKey,
         'issueUrgencyId' => 0,
         'lastRepliedById' => 0,
         'latestReplyIsBySupportUser' => 0,
