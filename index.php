@@ -32,7 +32,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $ticket_err = "Please enter ticket number.";
         }
         $ticket = trim($_POST["ticket"]);
-        $ticket = 'ID-' . $ticket;
+        //$ticket = 'ID-' . $ticket;
 
         if (empty($ticket_err)) {
             try {
@@ -155,7 +155,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                         <button type="submit" class="btn btn-secondary">Want to delete old ticket number and input new one? Click here.</button>
                     </div>
                 </form>
-                <h4 class="mb-4 lead">Ticket Number: <?= $_SESSION["ticket"]; ?></h4>
+                <h4 class="mb-4 lead">Ticket Number: ID-<?= $_SESSION["ticket"]; ?></h4>
                 <h4 class="mb-4 lead">POINTS: <?= $_SESSION["ticket_points"]; ?></h4>
                 <hr>
             <?php } else { ?>
