@@ -39,12 +39,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 $client = login();
                 $result = findProjectIssues($client, $ticket);
                 $result = json_decode(json_encode($result), true);
-                var_dump($result['return']['primaryKey']);
-                var_dump($result);exit;
                 if (empty($result)){
                     $_SESSION["ticket_error"] = true;
                 } else {
-                    $_SESSION["ticket_primaryKey"] = $result['primaryKey'];
+                    $_SESSION["ticket_primaryKey"] = $result['return']['primaryKey'];
                     $_SESSION["ticket_data"] = $result;
                     $_SESSION["ticket"] = $ticket;
                     $_SESSION["ticket_error"] = false;
