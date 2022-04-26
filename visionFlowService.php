@@ -97,7 +97,7 @@ function findProjectIssues($client, $issueKey)
     )));
 }
 
-function storeIssueDocument($client, $fileName, $ticketNumber) {
+function storeIssueDocument($client, $fileName, $ticketNumber, $fileUniqueName) {
     return $client->storeIssueDocument(array(
             'document' => array(
                 'createdBySystemUserId' => 0,
@@ -117,7 +117,7 @@ function storeIssueDocument($client, $fileName, $ticketNumber) {
                 'permissionType' => 0,
                 'primaryKey' => 0,
                 'supportCenterFlag' => 0,
-                'name' => 'file_name.ext'
+                'name' => $fileUniqueName
             ),
             'projectIssueId' => $ticketNumber, // issue.primaryKey
             'fileContent' => (file_get_contents($fileName)

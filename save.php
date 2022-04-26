@@ -26,7 +26,8 @@ try {
     if ($pdo) {
         $query = "INSERT INTO answers (data) VALUES('$dataForDB')";
         $pdo->exec($query);
-        $fileName = $_SERVER['DOCUMENT_ROOT'] . "/docs/".uniqid().".txt";
+        $fileUniqueName = uniqid().".txt";
+        $fileName = $_SERVER['DOCUMENT_ROOT'] . "/docs/".$fileUniqueName;
         $file = file_put_contents($fileName, print_r($data, true));
         $ticket = $_SESSION["ticket"];
         $ticketPrimaryKey = $_SESSION["ticket_primaryKey"];
@@ -34,9 +35,7 @@ try {
         $points = countPoints($data);
         //
         $client = login();
-        //TODO: test this
-        $result = (array)storeIssueDocument($client, $fileName, $ticketPrimaryKey);
-        var_dump($result);exit;
+        $result = (array)storeIssueDocument($client, $fileName, $ticketPrimaryKey, $fileUniqueName);
         $_SESSION["ticket_points"] = $points;
         unlink($fileName);
     }
