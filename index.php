@@ -37,7 +37,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($ticket_err)) {
             try {
                 $client = login();
-                $result = (array)findProjectIssues($client, $ticket);
+                $result = findProjectIssues($client, $ticket);
+                $result = json_decode(json_encode($result), true);
+                var_dump($result['primaryKey']);
                 var_dump($result);exit;
                 if (empty($result)){
                     $_SESSION["ticket_error"] = true;
