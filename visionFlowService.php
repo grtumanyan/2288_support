@@ -99,27 +99,29 @@ function findProjectIssues($client, $issueKey)
 
 function storeIssueDocument($client, $fileName, $ticketNumber) {
     return $client->storeIssueDocument(array(
-        'document' => array(
-            'createdBySystemUserId' => 0,
-            'documentSize' => round(filesize($fileName) / 1024 / 1024, 1),
-            'folderId' => 0,
-            'inheritPermissions' => 0,
-            'inheritPermissionsHasBeenSet' => 0,
-            'inheritSupportCenterFlag' => 0,
-            'inheritSupportCenterFlagHasBeenSet' => 0,
-            'isFolder' => 0,
-            'isFolderHasBeenSet' => 0,
-            'isLinkedProjectDocument' => 0,
-            'lockedBySystemUserId' => 0,
-            'modifiedBySystemUserId' => 0,
-            'numberOfFiles' => 0,
-            'numberOfFolders' => 0,
-            'permissionType' => 0,
-            'primaryKey' => 0,
-            'supportCenterFlag' => 0,
-        ),
-        'projectIssueId' => $ticketNumber,
-        'fileContent' => base64_decode(file_get_contents($fileName)),
-    ));
+            'document' => array(
+                'createdBySystemUserId' => 0,
+                'documentSize' => 0,
+                'folderId' => 0,
+                'inheritPermissions' => 0,
+                'inheritPermissionsHasBeenSet' => 0,
+                'inheritSupportCenterFlag' => 0,
+                'inheritSupportCenterFlagHasBeenSet' => 0,
+                'isFolder' => 0,
+                'isFolderHasBeenSet' => 0,
+                'isLinkedProjectDocument' => 0,
+                'lockedBySystemUserId' => 0,
+                'modifiedBySystemUserId' => 0,
+                'numberOfFiles' => 0,
+                'numberOfFolders' => 0,
+                'permissionType' => 0,
+                'primaryKey' => 0,
+                'supportCenterFlag' => 0,
+                'name' => 'file_name.ext'
+            ),
+            'projectIssueId' => $ticketNumber, // issue.primaryKey
+            'fileContent' => (file_get_contents($fileName)
+            )
+        )
+    );
 }
-
