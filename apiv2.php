@@ -168,7 +168,7 @@ try {
                     class="form-select form-select-sm mb-3 question"
                     aria-label=".form-select-lg example"
                     data-question="{$res->id}">
-                    data-points="{$_SESSION["ticket_djurslag"]}">
+                    data-points="{$_SESSION["ticket_points"]}">
                 <option ></option>
 HTML;
 

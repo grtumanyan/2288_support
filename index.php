@@ -109,7 +109,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 $("#question_list").append(res);
                 var points = $("#question_list").data('points');
                 console.log(points);
-                $('#points').textContent(points);
+                $('#points').text(points);
             });
 
             $('html,body').animate({scrollTop: document.body.scrollHeight}, "fast");
