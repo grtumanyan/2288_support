@@ -112,6 +112,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                     var currentValue = $('#points').text();
                     var latest = parseInt(currentValue) + parseInt(pointsCurrent);
                     $('#points').text(latest);
+                    if (latest <= 50) {
+                        var text = 'Går bra att avvakta hemma, Rådgivning från 2288';
+                    }else if (latest > 50 && latest <= 200){
+                        var text = 'Kontakta Firstvet';
+                    } else if (latest > 200) {
+                        var text = 'Åk till klinik';
+                    }
+                    $('#besluts').text(latest);
                 }
             });
 
@@ -138,21 +146,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         <p class="lead">Below you can find support functionalities for 2288.</p>
     </div>
 
-    <p id='points' class="mb-4 lead">0</p>
     <div class="row">
         <div class="col-md-6 order-md-2 mb-4">
             <h4 class="d-flex justify-content-between text-center mb-3">
                 <span class="text-muted">Beslutsstödets svar</span>
             </h4>
-            <?php if (isset($_SESSION["ticket_points"])) { ?>
-                <?php if ($_SESSION["ticket_points"] < 50) { ?>
-                    <p class="lead">Går bra att avvakta hemma, Rådgivning från 2288</p>
-                <?php } elseif ($_SESSION["ticket_points"] >= 50 && $_SESSION["ticket_points"] <= 200) { ?>
-                    <p class="lead">Kontakta Firstvet</p>
-                <?php } elseif ($_SESSION["ticket_points"] > 200) { ?>
-                    <p class="lead">Åk till klinik</p>
-                <?php } ?>
-            <?php } ?>
+            <p id='besluts' class="lead"></p>
+            <p id='points' class="mb-4 lead">0</p>
         </div>
         <div class="col-md-6 order-md-1 text-center">
             <?php if (isset($_SESSION["ticket_points"])) { ?>
