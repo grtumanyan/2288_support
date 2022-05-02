@@ -92,7 +92,8 @@ try {
         if(!$parentQuestion && $option){
             $_SESSION["ticket_djurslag"] = $option;
         }else {
-            $points = countPoints($currentQuestion->question, $option, $_SESSION["ticket_djurslag"]);
+            //$points = countPoints($currentQuestion->question, $option, $_SESSION["ticket_djurslag"]);
+            $points = countPoints('Ålder', 'över 6 år', $_SESSION["ticket_djurslag"]);
         }
 
 //        $points = 0;
