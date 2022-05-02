@@ -109,6 +109,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 $("#question_list").append(res);
 
                 $.ajax({url: "someFileToUpdateTheSession.php", success: function(result){
+                        console.log(result);
                         $("#points").html(result);
                     }});
             });
