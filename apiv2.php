@@ -152,9 +152,9 @@ try {
                 if($res->question = 'Djurslag'){
                     $_SESSION["ticket_djurslag"] = $option;
                 }
-                if($_SESSION["ticket_djurslag"]) {
+                if(isset($_SESSION["ticket_djurslag"])) {
                     $points = countPoints($res->question, $option, $_SESSION["ticket_djurslag"]);
-                    if(!$_SESSION["ticket_points"]) {
+                    if(!isset($_SESSION["ticket_points"])) {
                         $_SESSION["ticket_points"] = 0;
                     }
                     $points = $_SESSION["ticket_points"] + $points;
