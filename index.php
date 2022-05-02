@@ -110,7 +110,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 var pointsCurrent = res.substr(res.indexOf("data-point=") + 12, 2);
                 if ( (pointsCurrent+"").match(/^\d+$/) ) {
                     var currentValue = $('#points').text();
-                    $('#points').text(currentValue + pointsCurrent);
+                    var latest = currentValue + pointsCurrent;
+                    $('#points').text(latest);
                 }
             });
 
