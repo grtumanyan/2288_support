@@ -32,8 +32,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $ticket_err = "Please enter ticket number.";
         }
         $ticket = trim($_POST["ticket"]);
-        //$ticket = 'ID-' . $ticket;
-
         if (empty($ticket_err)) {
             try {
                 $client = login();

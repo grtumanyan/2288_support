@@ -28,12 +28,20 @@ try {
         $pdo->exec($query);
         $fileUniqueName = uniqid().".txt";
         $fileName = $_SERVER['DOCUMENT_ROOT'] . "/docs/".$fileUniqueName;
+
+        $points = $_SESSION["ticket_points"];
+        if ($points < 50) {
+            $data['beslutsstödets_svar'] = 'Går bra att avvakta hemma, Rådgivning från 2288';
+        } elseif ($points >= 50 && $points <= 200) {
+            $data['beslutsstödets_svar'] = 'Kontakta Firstvet';
+        } elseif ($points > 200) {
+            $data['beslutsstödets_svar'] = 'Åk till klinik';
+        }
+
         $file = file_put_contents($fileName, print_r($data, true));
         $ticket = $_SESSION["ticket"];
         $ticketPrimaryKey = $_SESSION["ticket_primaryKey"];
-        //
-        $points = countPoints($data);
-        //
+
         $client = login();
         $result = (array)storeIssueDocument($client, $fileName, $ticketPrimaryKey, $fileUniqueName);
         $_SESSION["ticket_points"] = $points;

@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+require_once $_SERVER['DOCUMENT_ROOT'] . "/pointsCountingService.php";
+
 $host = '127.0.0.1';
 $db = 'support';
 
@@ -139,6 +141,12 @@ try {
 
         }
         if ($res) {
+            var_dump($option);exit;
+            //
+            $points = countPoints($data);
+            $_SESSION["ticket_points"] = $points;
+            //
+
             debug(__LINE__, ' ', $res->options);
             $options = str_replace('{', '[', $res->options);
             $options = str_replace('}', ']', $options);
