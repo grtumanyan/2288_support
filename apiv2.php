@@ -97,14 +97,10 @@ try {
         if($parentQuestion){
             if(isset($_SESSION["ticket_djurslag"])) {
                 $points = countPoints($currentQuestion->question, $option, $_SESSION["ticket_djurslag"]);
-
                 if(!isset($_SESSION["ticket_points"])) {
                     $_SESSION["ticket_points"] = 0;
                 }
                 $_SESSION["ticket_points"] = $_SESSION["ticket_points"] + $points;
-                if($option = 'KattTrubbNos'){
-                    var_dump($_SESSION["ticket_points"]);exit;
-                }
             }
         }elseif($option){
             $_SESSION["ticket_djurslag"] = $option;

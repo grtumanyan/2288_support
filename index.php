@@ -113,7 +113,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 } ?>';
 
                 <?php if(isset($_SESSION['ticket_points'])){
-                    var_dump($_SESSION['ticket_points']);
+                    var_dump($_SESSION['ticket_points']);exit;
                 } ?>
 
                 $('#points').html(points);
