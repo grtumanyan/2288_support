@@ -101,6 +101,7 @@ try {
                     $_SESSION["ticket_points"] = 0;
                 }
                 $points = $_SESSION["ticket_points"] + $points;
+                var_dump($points);exit;
                 $_SESSION["ticket_points"] = $points;
             }
         }elseif($option){
