@@ -1,111 +1,112 @@
 <?php
-function countPoints($data) {
+function countPoints($question, $option, $animal)
+{
     $points =
         ['Hund' =>
             [
-                'Ras Hund'  => [
-                    "HundTrubbNos" => 10
+                'Ras Hund' => [
+                    "Hund" => 10
                 ],
-                'Ras Katt'  => [
-                    "KattTrubbNos" => 10
+                'Ras Katt' => [
+                    "Katt" => 10
                 ],
-                'Ålder'  => [
+                'Ålder' => [
                     "Valp/kattunge (0-6mån)" => 50,
                     "6 mån-2 år" => 10,
                     "över 6 år" => 10,
                 ],
-                'Vikt'  => [
+                'Vikt' => [
                     "0,5-2 kg" => 50,
                     "2-4 kg" => 40, //HUND
                     "över 40 kg" => 10,
                 ],
-                'Allmäntillstånd'  => [
+                'Allmäntillstånd' => [
                     "Dämpad/orolig" => 10,
                     "Ligger mest/mycket orolig" => 40,
                     "Piper/gnäller/skriker" => 50,
                 ],
-                'Bajsar/kissar'  => [
+                'Bajsar/kissar' => [
                     "Ja-med viss svårighet" => 40,
                     "Nej-vill/kan inte gå ut för rastning" => 50,
                 ],
-                'Aptit'  => [
+                'Aptit' => [
                     "Nej" => 10,
                 ],
-                'Tydlig hälta'  => [
+                'Tydlig hälta' => [
                     "Ja" => 50,
                 ],
-                'Svullnad'  => [
+                'Svullnad' => [
                     "Ja" => 20,
                 ],
-                'Feber'  => [
+                'Feber' => [
                     "Ja" => 50,
                 ],
-                'Allmäntillstånd '  => [
+                'Allmäntillstånd ' => [
                     "Lite trött" => 10,
                     "Mycket trött" => 40,
                 ],
-                'Dygn i dräktigheten'  => [
+                'Dygn i dräktigheten' => [
                     "<60" => 30,
                     ">70" => 30,
                 ],
-                'Historik av dystoki'  => [
+                'Historik av dystoki' => [
                     "Ja-behandlad medicinskt" => 20,
                     "Ja-snittad" => 40,
                 ],
-                'Har det gjorts bilddiagnostik'  => [
+                'Har det gjorts bilddiagnostik' => [
                     "Nej" => 10,
                     "Ja-ultraljud" => 5,
                 ],
-                'Tempsänkning'  => [
+                'Tempsänkning' => [
                     "Ja" => 10,
                 ],
-                'Vattenavgång'  => [
+                'Vattenavgång' => [
                     "Ja" => 10,
                 ],
-                'Tid sedan vattenavgång'  => [
+                'Tid sedan vattenavgång' => [
                     "30 min-1,5h sedan" => 30,
                     "2-3h sedan" => 50,
                 ],
-                'Värkar'  => [
+                'Värkar' => [
                     "Ja" => 30,
                 ],
-                'Intensitet'  => [
+                'Intensitet' => [
                     "Inte så kraftiga" => 20,
                     "Mycket kraftiga" => 50,
                 ],
-                'Hur länge'  => [
+                'Hur länge' => [
                     "Börjat nyss" => 10,
                     "Mer än 30 min" => 50,
                     "1-4 h" => 100,
                 ],
-                'Var bor ni i förhållande till lämplig klinik'  => [
+                'Var bor ni i förhållande till lämplig klinik' => [
                     "30min-1h till klinik" => 20,
                     "1-2h till klinik" => 30,
                     ">2h till klinik" => 40,
                 ],
-                'Har det kommit några ungar'  => [
+                'Har det kommit några ungar' => [
                     "Ja" => 10,
                     "Nej" => 30,
                 ],
-                'Levande'  => [
+                'Levande' => [
                     "Några levande och några döda/mycket svaga" => 30,
                     "Nej" => 10,
                 ],
-                'När kom senaste ungen'  => [
+                'När kom senaste ungen' => [
                     "1-2h sedan" => 40, //HUND
                     ">2h sedan" => 50, //HUND
                 ],
-                'Syns fosterblåsa/foster'  => [
+                'Syns fosterblåsa/foster' => [
                     "Ja" => 30,
                 ],
-                'Flytning'  => [
+                'Flytning' => [
                     "Ja" => 10,
                 ],
-                'Färg'  => [
+                'Färg' => [
                     "Brunröd" => 10,
                     "Grön" => 100,
                 ],
-                'Tid förlupen sedan start på förlossning'  => [
+                'Tid förlupen sedan start på förlossning' => [
                     "0-6h" => 20,//HUND
                     "6-12h" => 50,//HUND
                     "12-18h" => 100,//HUND
@@ -114,117 +115,115 @@ function countPoints($data) {
             ],
             'Katt' =>
                 [
-                    'Ras Hund'  => [
-                        "HundTrubbNos" => 10
+                    'Ras Hund' => [
+                        "Hund" => 10
                     ],
-                    'Ras Katt'  => [
-                        "KattTrubbNos" => 10
+                    'Ras Katt' => [
+                        "Katt" => 10
                     ],
-                    'Ålder'  => [
+                    'Ålder' => [
                         "Valp/kattunge (0-6mån)" => 50,
                         "6 mån-2 år" => 10,
                         "över 6 år" => 10,
                     ],
-                    'Vikt'  => [
+                    'Vikt' => [
                         "0,5-2 kg" => 50,
                         "över 40 kg" => 10,
                     ],
-                    'Allmäntillstånd'  => [
+                    'Allmäntillstånd' => [
                         "Dämpad/orolig" => 10,
                         "Ligger mest/mycket orolig" => 40,
                         "Piper/gnäller/skriker" => 50,
                     ],
-                    'Bajsar/kissar'  => [
+                    'Bajsar/kissar' => [
                         "Ja-med viss svårighet" => 40,
                         "Nej-vill/kan inte gå ut för rastning" => 50,
                     ],
-                    'Aptit'  => [
+                    'Aptit' => [
                         "Nej" => 10,
                     ],
-                    'Tydlig hälta'  => [
+                    'Tydlig hälta' => [
                         "Ja" => 50,
                     ],
-                    'Svullnad'  => [
+                    'Svullnad' => [
                         "Ja" => 20,
                     ],
-                    'Feber'  => [
+                    'Feber' => [
                         "Ja" => 50,
                     ],
-                    'Allmäntillstånd '  => [
+                    'Allmäntillstånd ' => [
                         "Lite trött" => 10,
                         "Mycket trött" => 40,
                     ],
-                    'Dygn i dräktigheten'  => [
+                    'Dygn i dräktigheten' => [
                         "<60" => 30,
                         ">70" => 30,
                     ],
-                    'Historik av dystoki'  => [
+                    'Historik av dystoki' => [
                         "Ja-behandlad medicinskt" => 20,
                         "Ja-snittad" => 40,
                     ],
-                    'Har det gjorts bilddiagnostik'  => [
+                    'Har det gjorts bilddiagnostik' => [
                         "Nej" => 10,
                         "Ja-ultraljud" => 5,
                     ],
-                    'Tempsänkning'  => [
+                    'Tempsänkning' => [
                         "Ja" => 10,
                     ],
-                    'Vattenavgång'  => [
+                    'Vattenavgång' => [
                         "Ja" => 10,
                     ],
-                    'Tid sedan vattenavgång'  => [
+                    'Tid sedan vattenavgång' => [
                         "30 min-1,5h sedan" => 30,
                         "2-3h sedan" => 50,
                     ],
-                    'Värkar'  => [
+                    'Värkar' => [
                         "Ja" => 30,
                     ],
-                    'Intensitet'  => [
+                    'Intensitet' => [
                         "Inte så kraftiga" => 20,
                         "Mycket kraftiga" => 50,
                     ],
-                    'Hur länge'  => [
+                    'Hur länge' => [
                         "Börjat nyss" => 10,
                         "Mer än 30 min" => 50,
                         "1-4 h" => 100,
                     ],
-                    'Var bor ni i förhållande till lämplig klinik'  => [
+                    'Var bor ni i förhållande till lämplig klinik' => [
                         "30min-1h till klinik" => 20,
                         "1-2h till klinik" => 30,
                         ">2h till klinik" => 40,
                     ],
-                    'Har det kommit några ungar'  => [
+                    'Har det kommit några ungar' => [
                         "Ja" => 10,
                         "Nej" => 30,
                     ],
-                    'Levande'  => [
+                    'Levande' => [
                         "Några levande och några döda/mycket svaga" => 30,
                         "Nej" => 10,
                     ],
-                    'Syns fosterblåsa/foster'  => [
+                    'Syns fosterblåsa/foster' => [
                         "Ja" => 30,
                     ],
-                    'Flytning'  => [
+                    'Flytning' => [
                         "Ja" => 10,
                     ],
-                    'Färg'  => [
+                    'Färg' => [
                         "Brunröd" => 10,
                         "Grön" => 100,
                     ],
-                    'Tid förlupen sedan start på förlossning'  => [
+                    'Tid förlupen sedan start på förlossning' => [
                         "12-18h" => 20,//KATT
                         "24h eller mer" => 50,//KATT
                     ],
                 ]
         ];
-    $animal = $data['Djurslag'];
-    $count = 0;
+    return search($points[$animal], $question, $option);
+}
 
-    foreach ($data as $key=>$value) {
-        if (array_key_exists(str_replace('_', ' ', $key), $points[$animal])){
-            $point = $points[$animal][str_replace('_', ' ', $key)][$value];
-            $count += $point;
-        }
+function search(Array $array, $key, $value) {
+    foreach ($array as $subarray){
+        if (isset($subarray[$key]) && $subarray[$key] == $value)
+            return $subarray;
     }
-    return $count;
 }

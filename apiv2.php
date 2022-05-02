@@ -144,9 +144,8 @@ try {
 
             //
             if ($option) {
-                var_dump($res->question);
-                var_dump($option);exit;
-                $points = countPoints($data);
+                $points = countPoints($res->question, $option);
+                $points = $_SESSION["ticket_points"] + $points;
                 $_SESSION["ticket_points"] = $points;
             }
             //
