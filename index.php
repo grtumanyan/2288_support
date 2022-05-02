@@ -107,6 +107,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $.get(url + '?option=' + selected_value + '&question_id=' + question_id, function (res) {
                 console.log(res);
                 $("#question_list").append(res);
+                
                 var points = $("#question_list").data('points');
                 console.log(points);
                 $('#points').text(points);

@@ -168,7 +168,7 @@ try {
                     name="{$res->question}"
                     class="form-select form-select-sm mb-3 question"
                     aria-label=".form-select-lg example"
-                    data-question="{$res->id}">
+                    data-question="{$res->id}"
                     data-points="{$points}">
                 <option ></option>
 HTML;
