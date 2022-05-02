@@ -149,9 +149,14 @@ try {
 
             //
             if ($option) {
-                $points = countPoints($res->question, $option);
-                $points = $_SESSION["ticket_points"] + $points;
-                $_SESSION["ticket_points"] = $points;
+                if($res->question = 'Djurslag'){
+                    $_SESSION["ticket_djurslag"] = $option;
+                }
+                if($_SESSION["ticket_djurslag"]) {
+                    $points = countPoints($res->question, $option, $_SESSION["ticket_djurslag"]);
+                    $points = $_SESSION["ticket_points"] + $points;
+                    $_SESSION["ticket_points"] = $points;
+                }
             }
             //
 
