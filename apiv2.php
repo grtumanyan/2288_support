@@ -90,7 +90,9 @@ try {
         $parentQuestion = $stmt->fetchObject();
 
         if(!$parentQuestion && $option){
-            $animal = $_SESSION["ticket_djurslag"] = $option;
+            $_SESSION["ticket_djurslag"] = $option;
+        }else {
+            $points = countPoints($currentQuestion->question, $option, $_SESSION["ticket_djurslag"]);
         }
 
 //        $points = 0;
@@ -173,7 +175,7 @@ try {
                     class="form-select form-select-sm mb-3 question"
                     aria-label=".form-select-lg example"
                     data-question="{$res->id}"
-                    data-point="{countPoints($currentQuestion->question, $option, $animal)}">
+                    data-point="{$points}">
                 <option ></option>
 HTML;
 
