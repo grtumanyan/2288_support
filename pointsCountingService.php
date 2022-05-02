@@ -218,5 +218,9 @@ function countPoints($question, $option, $animal)
                     ],
                 ]
         ];
-    return $points[$animal][$question][$option];
+    if (isset($points[$animal][$question])){
+        if (isset($points[$animal][$question][$option])){
+            return $points[$animal][$question][$option];
+        }
+    }
 }
