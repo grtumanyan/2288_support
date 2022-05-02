@@ -108,7 +108,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 console.log(res);
                 $("#question_list").append(res);
                 var pointsCurrent = res.substr(res.indexOf("data-point=") + 12, 2);
-                console.log(pointsCurrent);
+                if(Math.floor(pointsCurrent) === pointsCurrent && $.isNumeric(pointsCurrent)){
+                    console.log(pointsCurrent);
+                }
                     // $('#points').text(points);
             });
 
