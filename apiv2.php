@@ -94,6 +94,24 @@ try {
         $stmt = $pdo->query($parentQuery);
         $parentQuestion = $stmt->fetchObject();
 
+        var_dump($parentQuestion);exit;
+
+        //
+        if ($option) {
+            if($res->question = 'Djurslag'){
+                $_SESSION["ticket_djurslag"] = $option;
+            }
+            if(isset($_SESSION["ticket_djurslag"])) {
+                $points = countPoints($res->question, $option, $_SESSION["ticket_djurslag"]);
+                if(!isset($_SESSION["ticket_points"])) {
+                    $_SESSION["ticket_points"] = 0;
+                }
+                $points = $_SESSION["ticket_points"] + $points;
+                $_SESSION["ticket_points"] = $points;
+            }
+        }
+        //
+
         if (is_null($option)) {
             $query = "SELECT * FROM questions WHERE level='$level' AND number='$number'";
             $stmt = $pdo->query($query);
@@ -146,23 +164,6 @@ try {
 
         }
         if ($res) {
-
-            //
-//            if ($option) {
-//                if($res->question = 'Djurslag'){
-//                    $_SESSION["ticket_djurslag"] = $option;
-//                }
-//                if(isset($_SESSION["ticket_djurslag"])) {
-//                    $points = countPoints($res->question, $option, $_SESSION["ticket_djurslag"]);
-//                    if(!isset($_SESSION["ticket_points"])) {
-//                        $_SESSION["ticket_points"] = 0;
-//                    }
-//                    $points = $_SESSION["ticket_points"] + $points;
-//                    $_SESSION["ticket_points"] = $points;
-//
-//                }
-//            }
-            //
 
             debug(__LINE__, ' ', $res->options);
             $options = str_replace('{', '[', $res->options);
