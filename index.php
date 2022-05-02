@@ -138,6 +138,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         <p class="lead">Below you can find support functionalities for 2288.</p>
     </div>
 
+    <h4 id='points' class="mb-4 lead">0</h4>
     <div class="row">
         <div class="col-md-6 order-md-2 mb-4">
             <h4 class="d-flex justify-content-between text-center mb-3">
@@ -154,7 +155,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             <?php } ?>
         </div>
         <div class="col-md-6 order-md-1 text-center">
-            <h4 id='points' class="mb-4 lead">POINTS: 0</h4>
             <?php if (isset($_SESSION["ticket_points"])) { ?>
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="mb-4">
                     <input type="hidden" class="form-control" name="rebootTicket">
