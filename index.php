@@ -108,15 +108,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 console.log(res);
                 $("#question_list").append(res);
 
-                <?php
-
-                if(isset($_SESSION['ticket_points'])){ var_dump($_SESSION['ticket_points']);
-                    ?>
-                var points =  <?= $_SESSION['ticket_points']; ?>
-                <?php } ?>
-
-                $('#points').html(points);
-
+                $.ajax({
+                    type: "POST",
+                    url: "someFileToUpdateTheSession.php",
+                    data: $(this).serialize(),
+                    success: function(){
+                        $('#points').html(data);
+                    }
+                });
             });
 
             $('html,body').animate({scrollTop: document.body.scrollHeight}, "fast");
