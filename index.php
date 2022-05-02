@@ -108,15 +108,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 console.log(res);
                 $("#question_list").append(res);
 
-                $.ajax({
-                    type: "POST",
-                    url: "someFileToUpdateTheSession.php",
-                    data: $(this).serialize(),
-                    success: function(data){
-                        console.log(data);
-                        $('#points').html(data);
-                    }
-                });
+                $.ajax({url: "someFileToUpdateTheSession.php", success: function(result){
+                        $("#points").html(result);
+                    }});
             });
 
             $('html,body').animate({scrollTop: document.body.scrollHeight}, "fast");
