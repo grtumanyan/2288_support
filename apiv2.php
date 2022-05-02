@@ -96,7 +96,7 @@ try {
 
         if($parentQuestion){
             var_dump($parentQuestion);exit;
-        }else{
+        }elseif($option){
             $_SESSION["ticket_djurslag"] = $option;
             var_dump($_SESSION["ticket_djurslag"]);exit;
         }
