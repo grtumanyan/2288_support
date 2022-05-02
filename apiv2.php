@@ -312,7 +312,13 @@ try {
         }
 
         $points = $pointsData[$_SESSION["ticket_djurslag"]][$currentQuestion->question][$option];
-
+        if(isset($_SESSION["ticket_djurslag"])) {
+            $_SESSION["ticket_djurslag"] = $_SESSION["ticket_djurslag"] + $points;
+            session_write_close();
+        } else{
+            $_SESSION["ticket_djurslag"] = 0;
+            session_write_close();
+        }
         if (is_null($option)) {
             $query = "SELECT * FROM questions WHERE level='$level' AND number='$number'";
             $stmt = $pdo->query($query);
