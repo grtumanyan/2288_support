@@ -310,22 +310,9 @@ try {
             $_SESSION["ticket_djurslag"] = $option;
             session_write_close();
         }
-var_dump($_SESSION["ticket_djurslag"]);
+
         $points = $pointsData[$_SESSION["ticket_djurslag"]][$currentQuestion->question][$option];
 
-//        $points = 0;
-//        if($parentQuestion){
-//            if(isset($_SESSION["ticket_djurslag"])) {
-//                $points = countPoints($currentQuestion->question, $option, $_SESSION["ticket_djurslag"]);
-//                if(!isset($_SESSION["ticket_points"])) {
-//                    $_SESSION["ticket_points"] = 0;
-//                }
-//                $_SESSION["ticket_points"] = $_SESSION["ticket_points"] + $points;
-//            }
-//        }elseif($option){
-//            $_SESSION["ticket_djurslag"] = $option;
-//        }
-//        session_write_close();
         if (is_null($option)) {
             $query = "SELECT * FROM questions WHERE level='$level' AND number='$number'";
             $stmt = $pdo->query($query);
