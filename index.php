@@ -107,6 +107,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $.get(url + '?option=' + selected_value + '&question_id=' + question_id, function (res) {
                 console.log(res);
                 $("#question_list").append(res);
+
+                var points = '<?php echo $_SESSION['ticket_points']?>';
+                $('#points').text(points);
+
             });
 
             $('html,body').animate({scrollTop: document.body.scrollHeight}, "fast");
@@ -148,6 +152,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             <?php } ?>
         </div>
         <div class="col-md-6 order-md-1 text-center">
+            <h4 id='points' class="mb-4 lead">POINTS: 0</h4>
             <?php if (isset($_SESSION["ticket_points"])) { ?>
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="mb-4">
                     <input type="hidden" class="form-control" name="rebootTicket">
@@ -156,7 +161,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                 </form>
                 <h4 class="mb-4 lead">Ticket Number: ID-<?= $_SESSION["ticket"]; ?></h4>
-                <h4 class="mb-4 lead">POINTS: <?= $_SESSION["ticket_points"]; ?></h4>
                 <hr>
             <?php } else { ?>
                 <?php if (!isset($_SESSION["ticket"])) { ?>
