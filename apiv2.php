@@ -95,12 +95,8 @@ try {
         $parentQuestion = $stmt->fetchObject();
 
         if($parentQuestion){
-            var_dump($currentQuestion->question);
-            var_dump($option);
-            exit;
-            //
             if(isset($_SESSION["ticket_djurslag"])) {
-                $points = countPoints($res->question, $option, $_SESSION["ticket_djurslag"]);
+                $points = countPoints($currentQuestion->question, $option, $_SESSION["ticket_djurslag"]);
                 if(!isset($_SESSION["ticket_points"])) {
                     $_SESSION["ticket_points"] = 0;
                 }
