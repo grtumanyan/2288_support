@@ -111,7 +111,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 var points = '<?php if(isset($_SESSION['ticket_points'])){
                     echo $_SESSION['ticket_points'];
                 } ?>';
-                $('#points').text(points);
+                $('#points').html(points);
 
             });
 
@@ -138,7 +138,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         <p class="lead">Below you can find support functionalities for 2288.</p>
     </div>
 
-    <h4 id='points' class="mb-4 lead">0</h4>
+    <p id='points' class="mb-4 lead">0</p>
     <div class="row">
         <div class="col-md-6 order-md-2 mb-4">
             <h4 class="d-flex justify-content-between text-center mb-3">
