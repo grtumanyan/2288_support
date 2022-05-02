@@ -100,7 +100,7 @@ try {
         }elseif($option){
             $_SESSION["ticket_djurslag"] = $option;
         }
-
+        session_write_close();
         if (is_null($option)) {
             $query = "SELECT * FROM questions WHERE level='$level' AND number='$number'";
             $stmt = $pdo->query($query);
