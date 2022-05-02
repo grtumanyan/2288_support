@@ -89,6 +89,7 @@ try {
         $stmt = $pdo->query($parentQuery);
         $parentQuestion = $stmt->fetchObject();
 
+        $points = 0;
         if($parentQuestion){
             if(isset($_SESSION["ticket_djurslag"])) {
                 $points = countPoints($currentQuestion->question, $option, $_SESSION["ticket_djurslag"]);
@@ -168,7 +169,7 @@ try {
                     class="form-select form-select-sm mb-3 question"
                     aria-label=".form-select-lg example"
                     data-question="{$res->id}">
-                    data-points="{$_SESSION["ticket_points"]}">
+                    data-points="{$points}">
                 <option ></option>
 HTML;
 
