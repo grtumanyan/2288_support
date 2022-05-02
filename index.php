@@ -119,7 +119,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                     } else if (latest > 200) {
                         var text = 'Åk till klinik';
                     }
-                    $('#besluts').text(latest);
+                    $('#besluts').text(text);
                 }
             });
 
