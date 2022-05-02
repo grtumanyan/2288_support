@@ -310,7 +310,7 @@ try {
             $_SESSION["ticket_djurslag"] = $option;
         }
 
-        $points = $pointsData[$_SESSION["ticket_djurslag"]][$currentQuestion->question][$option];
+        $points = $pointsData['Hund'][$currentQuestion->question][$option];
 
 //        $points = 0;
 //        if($parentQuestion){
