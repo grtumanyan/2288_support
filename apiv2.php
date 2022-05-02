@@ -89,19 +89,23 @@ try {
         $stmt = $pdo->query($parentQuery);
         $parentQuestion = $stmt->fetchObject();
 
-        $points = 0;
-        if($parentQuestion){
-            if(isset($_SESSION["ticket_djurslag"])) {
-                $points = countPoints($currentQuestion->question, $option, $_SESSION["ticket_djurslag"]);
-                if(!isset($_SESSION["ticket_points"])) {
-                    $_SESSION["ticket_points"] = 0;
-                }
-                $_SESSION["ticket_points"] = $_SESSION["ticket_points"] + $points;
-            }
-        }elseif($option){
-            $_SESSION["ticket_djurslag"] = $option;
+        if(!$parentQuestion && $option){
+            $animal = $_SESSION["ticket_djurslag"] = $option;
         }
-        session_write_close();
+
+//        $points = 0;
+//        if($parentQuestion){
+//            if(isset($_SESSION["ticket_djurslag"])) {
+//                $points = countPoints($currentQuestion->question, $option, $_SESSION["ticket_djurslag"]);
+//                if(!isset($_SESSION["ticket_points"])) {
+//                    $_SESSION["ticket_points"] = 0;
+//                }
+//                $_SESSION["ticket_points"] = $_SESSION["ticket_points"] + $points;
+//            }
+//        }elseif($option){
+//            $_SESSION["ticket_djurslag"] = $option;
+//        }
+//        session_write_close();
         if (is_null($option)) {
             $query = "SELECT * FROM questions WHERE level='$level' AND number='$number'";
             $stmt = $pdo->query($query);
@@ -168,7 +172,8 @@ try {
                     name="{$res->question}"
                     class="form-select form-select-sm mb-3 question"
                     aria-label=".form-select-lg example"
-                    data-question="{$res->id}">
+                    data-question="{$res->id}"
+                    data-point="{countPoints($currentQuestion->question, $option, $animal)}">
                 <option ></option>
 HTML;
 
