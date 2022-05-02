@@ -141,10 +141,12 @@ try {
 
         }
         if ($res) {
-            var_dump($option);exit;
+
             //
-            $points = countPoints($data);
-            $_SESSION["ticket_points"] = $points;
+            if ($option) {var_dump($option);exit;
+                $points = countPoints($data);
+                $_SESSION["ticket_points"] = $points;
+            }
             //
 
             debug(__LINE__, ' ', $res->options);
