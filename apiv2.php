@@ -310,7 +310,7 @@ try {
             $_SESSION["ticket_djurslag"] = $option;
             session_write_close();
         }
-
+var_dump($_SESSION["ticket_djurslag"]);
         $points = $pointsData[$_SESSION["ticket_djurslag"]][$currentQuestion->question][$option];
 
 //        $points = 0;
