@@ -112,7 +112,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                     type: "POST",
                     url: "someFileToUpdateTheSession.php",
                     data: $(this).serialize(),
-                    success: function(){
+                    success: function(data){
                         console.log(data);
                         $('#points').html(data);
                     }
