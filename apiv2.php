@@ -18,7 +18,7 @@ $pointsData =
             'Ålder' => [
                 "Valp/kattunge (0-6mån)" => 50,
                 "6 mån-2 år" => 10,
-                "över 6 år" => 999,//10
+                "över 6 år" => 10,
             ],
             'Vikt' => [
                 "0,5-2 kg" => 50,
@@ -308,9 +308,10 @@ try {
 
         if(!$parentQuestion && $option && !isset($_SESSION["ticket_djurslag"])){
             $_SESSION["ticket_djurslag"] = $option;
+            session_write_close();
         }
 
-        $points = $pointsData['Hund'][$currentQuestion->question][$option];
+        $points = $pointsData[$_SESSION["ticket_djurslag"]][$currentQuestion->question][$option];
 
 //        $points = 0;
 //        if($parentQuestion){
