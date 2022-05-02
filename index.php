@@ -107,8 +107,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $.get(url + '?option=' + selected_value + '&question_id=' + question_id, function (res) {
                 console.log(res);
                 $("#question_list").append(res);
-                var pointsCurrent = val.substr(val.indexOf("?") + 1)
-                console.log(point);
+                var pointsCurrent = res.substr(res.indexOf("data-point=") + 1, 2);
+                console.log(pointsCurrent);
                     // $('#points').text(points);
             });
 
