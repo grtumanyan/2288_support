@@ -108,13 +108,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 console.log(res);
                 $("#question_list").append(res);
                 var pointsCurrent = res.substr(res.indexOf("data-point=") + 12, 2);
-                if($.isNumeric(pointsCurrent)){
-                    console.log(pointsCurrent);
-                }
                 if ( (pointsCurrent+"").match(/^\d+$/) ) {
-                    console.log(pointsCurrent);
+                    var currentValue = $('#points').text();
+                    $('#points').text(points + pointsCurrent);
                 }
-                    // $('#points').text(points);
             });
 
             $('html,body').animate({scrollTop: document.body.scrollHeight}, "fast");
