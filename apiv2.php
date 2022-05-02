@@ -306,7 +306,7 @@ try {
         $stmt = $pdo->query($parentQuery);
         $parentQuestion = $stmt->fetchObject();
 
-        if(!$parentQuestion && $option && !isset($_SESSION["ticket_djurslag"])){
+        if($currentQuestion->question = 'Djurslag'){
             $_SESSION["ticket_djurslag"] = $option;
             session_write_close();
         }
