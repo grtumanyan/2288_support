@@ -5,10 +5,10 @@ function countPoints($question, $option, $animal)
         ['Hund' =>
             [
                 'Ras Hund' => [
-                    "Hund" => 10
+                    "HundTrubbNos" => 10
                 ],
                 'Ras Katt' => [
-                    "Katt" => 10
+                    "KattTrubbNos" => 10
                 ],
                 'Ålder' => [
                     "Valp/kattunge (0-6mån)" => 50,
@@ -116,10 +116,10 @@ function countPoints($question, $option, $animal)
             'Katt' =>
                 [
                     'Ras Hund' => [
-                        "Hund" => 10
+                        "HundTrubbNos" => 10
                     ],
                     'Ras Katt' => [
-                        "Katt" => 10
+                        "KattTrubbNos" => 10
                     ],
                     'Ålder' => [
                         "Valp/kattunge (0-6mån)" => 50,
