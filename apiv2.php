@@ -95,7 +95,9 @@ try {
         $parentQuestion = $stmt->fetchObject();
 
         if($parentQuestion){
-            var_dump($parentQuestion);exit;
+            var_dump($currentQuestion->question);
+            var_dump($option);
+            exit;
             //
             if(isset($_SESSION["ticket_djurslag"])) {
                 $points = countPoints($res->question, $option, $_SESSION["ticket_djurslag"]);
@@ -108,7 +110,7 @@ try {
         }elseif($option){
             $_SESSION["ticket_djurslag"] = $option;
         }
-        
+
         if (is_null($option)) {
             $query = "SELECT * FROM questions WHERE level='$level' AND number='$number'";
             $stmt = $pdo->query($query);
