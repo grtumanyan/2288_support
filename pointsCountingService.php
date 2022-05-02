@@ -218,12 +218,5 @@ function countPoints($question, $option, $animal)
                     ],
                 ]
         ];
-    return search($points[$animal], $question, $option);
-}
-
-function search(Array $array, $key, $value) {
-    foreach ($array as $subarray){
-        if (isset($subarray[$key]) && $subarray[$key] == $value)
-            return $subarray;
-    }
+    return $points[$animal][$question][$option];
 }
