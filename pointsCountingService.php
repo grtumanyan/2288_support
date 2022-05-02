@@ -13,7 +13,7 @@ function countPoints($question, $option, $animal)
                 'Ålder' => [
                     "Valp/kattunge (0-6mån)" => 50,
                     "6 mån-2 år" => 10,
-                    "över 6 år" => 10,
+                    "över 6 år" => 999,//10
                 ],
                 'Vikt' => [
                     "0,5-2 kg" => 50,
