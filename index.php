@@ -6,13 +6,13 @@ error_reporting(E_ALL);
 
 require_once $_SERVER['DOCUMENT_ROOT'] . "/visionFlowService.php";
 
-if (isset($_GET['debug'])) {
-    session_start();
-    $_SESSION['debug'] = 1;
-} else {
-    $_SESSION['debug']=0;
-    session_abort();
-}
+//if (isset($_GET['debug'])) {
+//    session_start();
+//    $_SESSION['debug'] = 1;
+//} else {
+//    $_SESSION['debug']=0;
+//    session_abort();
+//}
 
 session_start();
 
@@ -108,7 +108,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 console.log(res);
                 $("#question_list").append(res);
 
-                <?php if(isset($_SESSION['ticket_points'])){ ?>
+                <?php
+                session_start();
+                if(isset($_SESSION['ticket_points'])){
+                    ?>
                 var points =  <?= $_SESSION['ticket_points']; ?>
                 <?php } ?>
 
