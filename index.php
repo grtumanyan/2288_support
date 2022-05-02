@@ -108,7 +108,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 console.log(res);
                 $("#question_list").append(res);
 
-                var points = '<?php echo $_SESSION['ticket_points']?>';
+                var points = '<?php if(isset($_SESSION['ticket_points'])){
+                    echo $_SESSION['ticket_points'];
+                } ?>';
                 $('#points').text(points);
 
             });
