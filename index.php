@@ -111,7 +111,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 if ( (pointsCurrent+"").match(/^\d+$/) ) {
                     var currentValue = $('#points').text();
                     var latest = parseInt(currentValue) + parseInt(pointsCurrent);
-                    //$('#points').text(latest);
+                    $('#points').text(latest);
                     if (latest <= 50) {
                         var text = 'Går bra att avvakta hemma, Rådgivning från 2288';
                     }else if (latest > 50 && latest <= 200){
@@ -132,7 +132,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#"><?= $_SESSION["username"]; ?></a>
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#" style="margin-left: 10px;"><?= $_SESSION["username"]; ?></a>
     <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
             <a class="nav-link" href="logout.php">Sign out</a>
@@ -152,7 +152,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 <span class="text-muted">Beslutsstödets svar</span>
             </h4>
             <p id='besluts' class="lead"></p>
-<!--            <p id='points' class="mb-4 lead">0</p>-->
+            <p id='points' class="mb-4 lead hidden">0</p>
         </div>
         <div class="col-md-6 order-md-1 text-center">
             <?php if (isset($_SESSION["ticket_points"])) { ?>
