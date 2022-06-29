@@ -99,6 +99,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $(document).on("change", "select.question", function () {
             $(this).css('pointer-events','none');
+            $(this).css('font-weight','bold');
             var selected_value = $(this).children("option:selected").val();
             var question_id = $(this).data('question');
 
@@ -152,7 +153,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 <span class="text-muted">Beslutsstödets svar</span>
             </h4>
             <p id='besluts' class="lead"></p>
-            <p id='points' class="mb-4 lead hidden">0</p>
+            <p id='points' class="mb-4 lead" hidden>0</p>
         </div>
         <div class="col-md-6 order-md-1 text-center">
             <?php if (isset($_SESSION["ticket_points"])) { ?>
