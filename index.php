@@ -98,7 +98,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         });
 
         $(document).on("change", "select.question", function () {
-
+            $(this).css('pointer-events','none');
             var selected_value = $(this).children("option:selected").val();
             var question_id = $(this).data('question');
 
@@ -111,7 +111,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 if ( (pointsCurrent+"").match(/^\d+$/) ) {
                     var currentValue = $('#points').text();
                     var latest = parseInt(currentValue) + parseInt(pointsCurrent);
-                    $('#points').text(latest);
+                    //$('#points').text(latest);
                     if (latest <= 50) {
                         var text = 'Går bra att avvakta hemma, Rådgivning från 2288';
                     }else if (latest > 50 && latest <= 200){
@@ -152,7 +152,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 <span class="text-muted">Beslutsstödets svar</span>
             </h4>
             <p id='besluts' class="lead"></p>
-            <p id='points' class="mb-4 lead">0</p>
+<!--            <p id='points' class="mb-4 lead">0</p>-->
         </div>
         <div class="col-md-6 order-md-1 text-center">
             <?php if (isset($_SESSION["ticket_points"])) { ?>
