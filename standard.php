@@ -60,7 +60,7 @@ else {
 <div class="container">
     <div class="py-5 text-center">
         <h2>Standard questions</h2>
-        <p class="lead">Edit standard questions here</p>
+        <p class="lead">Edit standard questions here, or</p>
         <a class="btn btn-info" href="index.php">Go Home</a>
     </div>
 
