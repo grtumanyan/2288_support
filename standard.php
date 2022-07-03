@@ -15,7 +15,7 @@ $dsn = "mysql:host=$host;dbname=$db;charset=UTF8";
 if($_SERVER["REQUEST_METHOD"] == "POST") {
     $data = array_map ( 'htmlspecialchars' , $_POST );
 
-    var_dump('think man');exit;
+    var_dump($data);exit;
 
     try {
         $pdo = new PDO($dsn, $user, $password);
@@ -82,10 +82,10 @@ else {
     </div>
 
     <div class="row">
-        <div class="col-md-6 order-md-1 text-center">
+        <div class="col-md-12  text-center">
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                 <div class="form-group">
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">
+                    <textarea class="form-control" id="standard" rows="3">
                         <?php echo $standard['data']; ?>
                     </textarea>
                 </div>
