@@ -22,6 +22,19 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     exit;
 }
 
+//Standard answers code part
+$host = 'localhost';
+$db = 'support';
+$user = 'root';
+$password = 'password';
+$dsn = "mysql:host=$host;dbname=$db;charset=UTF8";
+$pdo = new PDO($dsn, $user, $password);
+if ($pdo) {
+    $stmt = $pdo->prepare("SELECT * FROM standard");
+    $stmt->execute();
+    $standard = $stmt->fetch();
+}
+$standard = explode(',', $standard['data']);
 
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -210,11 +223,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             <span class="text-muted">Standard questions</span>
         </h4>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">Cras justo odio</li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Morbi leo risus</li>
-            <li class="list-group-item">Porta ac consectetur ac</li>
-            <li class="list-group-item">Vestibulum at eros</li>
+            <?php foreach($standard as $one){
+                echo '<li class="list-group-item">' .$one. '</li>';
+            } ?>
+<!--            <li class="list-group-item">Cras justo odio</li>-->
+<!--            <li class="list-group-item">Dapibus ac facilisis in</li>-->
+<!--            <li class="list-group-item">Morbi leo risus</li>-->
+<!--            <li class="list-group-item">Porta ac consectetur ac</li>-->
+<!--            <li class="list-group-item">Vestibulum at eros</li>-->
         </ul>
     </div>
     <br>

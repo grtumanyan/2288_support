@@ -57,7 +57,6 @@ else {
         $stmt = $pdo->prepare("SELECT * FROM standard");
         $stmt->execute();
         $standard = $stmt->fetch();
-        $standard = explode(',', $standard['data']);
     }
 }
 
@@ -84,7 +83,7 @@ else {
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group">
                 <label>Please submit new entries with commas separated</label>
-                <input type="textarea" name="standard" class="form-control value="<?php echo $standard; ?>">
+                <input type="textarea" name="standard" class="form-control value="<?php echo $standard['data']; ?>">
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Update">
