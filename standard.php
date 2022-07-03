@@ -57,7 +57,6 @@ else {
         $stmt = $pdo->prepare("SELECT * FROM standard");
         $stmt->execute();
         $standard = $stmt->fetch();
-        var_dump($standard['data']);exit;
     }
 }
 
@@ -77,10 +76,9 @@ else {
     </style>
 </head>
 <body>
-<div class="h-100 row justify-content-center">
+<div class="h-200 row justify-content-center">
     <div class="wrapper">
-        <h2>Standard questions</h2>
-
+        <h2>Edit standard questions here</h2>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group">
                 <label>Please submit new entries with commas separated</label>
