@@ -57,8 +57,7 @@ else {
         $stmt = $pdo->prepare("SELECT * FROM standard");
         $stmt->execute();
         $standard = $stmt->fetch();
-        $standard = explode(',', $standard);
-
+        $standard = explode(',', $standard['data']);
     }
 }
 
@@ -80,16 +79,15 @@ else {
 <body>
 <div class="h-100 row justify-content-center">
     <div class="wrapper">
-        <h2>Standard questions page</h2>
+        <h2>Standard questions</h2>
 
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group">
-                <label>Username</label>
-                <input type="text" name="standard" class="form-control value="<?php echo $standard; ?>">
-                <span class="invalid-feedback">Please submit new entries with commas separated</span>
+                <label>Please submit new entries with commas separated</label>
+                <input type="textarea" name="standard" class="form-control value="<?php echo $standard; ?>">
             </div>
             <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Login">
+                <input type="submit" class="btn btn-primary" value="Update">
             </div>
         </form>
     </div>

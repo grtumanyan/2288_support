@@ -133,9 +133,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#" ><?= $_SESSION["username"]; ?></a>
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#" style="margin-left: 10px;"><?= $_SESSION["username"]; ?></a>
     <ul class="navbar-nav px-3">
-        <li class="nav-item">
+        <li class="nav-item text-nowrap">
             <a class="nav-link" href="standard.php">Standard questions</a>
         </li>
         <li class="nav-item">
