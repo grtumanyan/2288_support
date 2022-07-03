@@ -21,8 +21,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $dataForDB = json_encode($new_standard);
         if ($pdo) {
-            $query = "INSERT INTO standard (data) VALUES('$dataForDB')";
-            $pdo->exec($query);
+            $sql = "UPDATE standard SET data=? WHERE id=?";
+            $stmt= $pdo->prepare($sql);
+            $stmt->execute([$dataForDB, 1]);
         }
         header('Location: index.php');
         exit;
