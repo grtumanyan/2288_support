@@ -19,11 +19,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         $pdo = new PDO($dsn, $user, $password);
 
-        $dataForDB = json_encode($new_standard);
+//        $dataForDB = json_encode($new_standard);
         if ($pdo) {
             $sql = "UPDATE standard SET data=? WHERE id=?";
             $stmt= $pdo->prepare($sql);
-            $stmt->execute([$dataForDB, 1]);
+            $stmt->execute([$new_standard, 1]);
         }
         header('Location: index.php');
         exit;
