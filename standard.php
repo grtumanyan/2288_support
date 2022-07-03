@@ -82,7 +82,7 @@ else {
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group">
                 <label>Please submit new entries with commas separated</label>
-                <input type="textarea" name="standard" class="form-control value="<?php echo $standard['data']; ?>">
+                <input type="text" name="standard" class="form-control value="<?php echo $standard['data']; ?>">
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Update">
