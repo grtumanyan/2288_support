@@ -57,7 +57,7 @@ else {
         $stmt = $pdo->prepare("SELECT * FROM standard");
         $stmt->execute();
         $standard = $stmt->fetch();
-        var_dump($standard);exit;
+        $standard = explode(',', $standard);
 
     }
 }

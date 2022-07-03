@@ -137,8 +137,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
             <a class="nav-link" href="standard.php">Standard questions</a>
-        </li>
-        <li class="nav-item text-nowrap">
             <a class="nav-link" href="logout.php">Sign out</a>
         </li>
     </ul>
