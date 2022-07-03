@@ -67,9 +67,7 @@ else {
         <div class="col-md-12  text-center">
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                 <div class="form-group">
-                    <textarea class="form-control" name="standard" rows="3">
-                        <?php echo $standard['data']; ?>
-                    </textarea>
+                    <textarea class="form-control" name="standard" rows="3"><?php echo $standard['data']; ?></textarea>
                 </div>
                 <input type="submit" value="Update!" />
             </form>
