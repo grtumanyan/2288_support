@@ -63,7 +63,6 @@ else {
 ?>
 
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,18 +75,19 @@ else {
     </style>
 </head>
 <body>
-<div class="h-200 row justify-content-center">
-    <div class="wrapper">
-        <h2>Edit standard questions here</h2>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="form-group">
-                <label>Please submit new entries with commas separated</label>
-                <input type="text" name="standard" class="form-control value="<?php echo $standard['data']; ?>">
-            </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Update">
-            </div>
-        </form>
+<div class="container">
+    <div class="py-5 text-center">
+        <h2>Standard questions</h2>
+        <p class="lead">Edit standard questions here</p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 order-md-1 text-center">
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                <textarea name="mytextarea"><?php echo $standard['data']; ?></textarea>
+                <input type="submit" value="Update!" />
+            </form>
+        </div>
     </div>
 </div>
 
