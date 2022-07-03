@@ -15,7 +15,7 @@ $dsn = "mysql:host=$host;dbname=$db;charset=UTF8";
 if($_SERVER["REQUEST_METHOD"] == "POST") {
     $data = array_map ( 'htmlspecialchars' , $_POST );
 
-    var_dump($data);exit;
+    var_dump($_POST);exit;
 
     try {
         $pdo = new PDO($dsn, $user, $password);
