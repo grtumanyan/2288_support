@@ -61,6 +61,12 @@ else {
     <li class="nav-item active">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+    </li>
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#" style="margin-left: 10px;"><?= $_SESSION["username"]; ?></a>
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="standard.php" style="margin-left: 10px;">Standard questions</a>
 
