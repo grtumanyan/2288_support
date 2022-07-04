@@ -145,15 +145,28 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     </script>
 </head>
 <body>
-<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#" style="margin-left: 10px;"><?= $_SESSION["username"]; ?></a>
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="standard.php" style="margin-left: 10px;">Standard questions</a>
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+    <a class="navbar-brand" href="#"><?= $_SESSION["username"]; ?></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <ul class="navbar-nav px-3">
-        <li class="nav-item">
-            <a class="nav-link" href="logout.php">Sign out</a>
-        </li>
-    </ul>
+    <div class="collapse navbar-collapse" id="navbarsExample02">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="index.php">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="standard.php">Standard questions</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="logout.php">Sign out</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-md-0">
+            <input class="form-control" type="text" placeholder="Search">
+        </form>
+    </div>
 </nav>
 <div class="container">
     <div class="py-5 text-center">
