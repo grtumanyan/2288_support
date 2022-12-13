@@ -25,7 +25,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 //Standard answers code part
 $host = 'localhost';
 $db = 'support';
-$user = 'root';
+$user = 'support';
 $password = 'password';
 $dsn = "mysql:host=$host;dbname=$db;charset=UTF8";
 $pdo = new PDO($dsn, $user, $password);
