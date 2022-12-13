@@ -15,7 +15,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 // DB values
 $host = 'localhost';
 $db = 'support';
-$dbuser = 'root';
+$dbuser = 'support';
 $dbpassword = 'password';
 $dsn = "mysql:host=$host;dbname=$db;charset=UTF8";
 
