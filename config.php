@@ -2,7 +2,7 @@
 /* Database credentials.*/
 $host = 'support_db';
 $db = 'support';
-$user = 'root';
+$user = 'support';
 $password = 'password';
 
 

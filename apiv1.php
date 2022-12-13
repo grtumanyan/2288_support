@@ -2,8 +2,8 @@
 
 $host = 'support_db';
 $db = 'support';
-$user = 'root';
-$password = 'root';
+$user = 'support';
+$password = 'password';
 
 
 $dsn = "mysql:host=$host;dbname=$db;charset=UTF8";

@@ -10,7 +10,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/pointsCountingService.php";
 
 $host = 'localhost';
 $db = 'support';
-$user = 'root';
+$user = 'support';
 $password = 'password';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=UTF8";

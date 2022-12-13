@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 
 $host = 'localhost';
 $db = 'support';
-$user = 'root';
+$user = 'support';
 $password = 'password';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=UTF8";
