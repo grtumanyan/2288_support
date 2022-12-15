@@ -3,8 +3,12 @@ session_start();
 
 require_once $_SERVER['DOCUMENT_ROOT'] . "/pointsCountingService.php";
 
-$host = '127.0.0.1';
+// DB values
+$host = 'localhost';
 $db = 'support';
+$dbuser = 'support';
+$dbpassword = 'password';
+$dsn = "mysql:host=$host;dbname=$db;charset=UTF8";
 
 $pointsData =
     ['Hund' =>
@@ -223,16 +227,6 @@ $pointsData =
                 ],
             ]
     ];
-
-$user = 'support_user';
-
-
-
-$password = '1mRp+yAy0#$%';
-
-
-$dsn = "mysql:host=$host;dbname=$db;charset=UTF8";
-
 
 //if (!isset($_GET['option']) || trim($_GET['option']) == "") {
 //    //Bad Request
