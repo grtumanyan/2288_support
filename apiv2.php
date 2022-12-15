@@ -6,8 +6,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/pointsCountingService.php";
 // DB values
 $host = 'localhost';
 $db = 'support';
-$dbuser = 'support';
-$dbpassword = 'password';
+$user = 'support';
+$password = 'password';
 $dsn = "mysql:host=$host;dbname=$db;charset=UTF8";
 
 $pointsData =
@@ -227,6 +227,7 @@ $pointsData =
                 ],
             ]
     ];
+
 
 //if (!isset($_GET['option']) || trim($_GET['option']) == "") {
 //    //Bad Request
