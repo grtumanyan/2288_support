@@ -44,6 +44,7 @@ try {
 
         $client = login();
         $result = (array)storeIssueDocument($client, $fileName, $ticketPrimaryKey, $fileUniqueName);
+        var_dump($result);exit;
         $_SESSION["ticket_points"] = $points;
         unlink($fileName);
     }
